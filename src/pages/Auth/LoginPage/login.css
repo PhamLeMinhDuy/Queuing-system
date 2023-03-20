@@ -1,9 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-    border: none; 
-    
-}
+
 
 .login-page{
     display: flex;
@@ -19,7 +14,7 @@
     text-align: center;
 }
 
-.form-login{
+.form-input{
     margin-top: 80px;
     text-align: left;
     font-family: 'Nunito';
@@ -65,16 +60,21 @@
 }
 
 
-.forget-password{
+.forget-password {
     padding-top: 8px;
     padding-bottom: 20px;
     text-align: left;
+    
+}
+
+.forget-link{
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
     color: #E73F3F;
+    text-decoration: none;
 }
 
 .btn{
@@ -91,6 +91,8 @@
     background: #FF9138;
     box-shadow: 0px 0px 6px #E7E9F2;
     border-radius: 8px;
+    cursor: pointer;
+    border: none;
 
 }
 
@@ -100,3 +102,4 @@
     background-color: #fff;
 
 }
+
