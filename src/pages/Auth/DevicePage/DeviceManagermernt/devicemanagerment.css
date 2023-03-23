@@ -1,0 +1,225 @@
+.device__managerment {
+    position: relative;
+    width: 100%;
+}
+
+.device__managerment h1 {
+    display: absolute;
+    transform:translate(17%, 160px);  
+    color: var(--text-primary-color);
+}
+
+.device__managerment-infor{
+    position: absolute;
+    width: 77.2%;
+    height: 550px;  
+    left: 55%;
+    top: 228px;
+    transform: translateX(-50%); 
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px rgba(219, 219, 219, 0.5);
+    border-radius: 12px;
+}
+
+.device__managerment-btn {
+    position: absolute;
+    left: 38%;
+    transform: translateY(100px);
+    display: inline-flex;
+    justify-content: center;
+}
+
+.device__managerment-btn input {
+    margin: 16px;
+    width: 147px;
+    height: 48px;
+}
+
+.device__managerment-infor h3 {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 16px;
+    color: var(--text-primary-color);
+}
+
+.device__managerment-infor-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.device__managerment-infor-column,
+.device__managerment-infor-column-other {
+    font-weight: 550;
+    font-size: 16px;
+}
+
+.device__managerment-infor-column,
+.device__managermaent-infor-column-list {
+    width: 50%;
+}
+
+.device__managerment-infor-column-other {
+    width: 100%;
+}
+
+.device__managermaent-infor-column-title,
+.device__managermaent-infor-column-other-title,
+.device__managerment-infor-column-other-sub  {
+    display: inline-flex;
+    height: 24px;
+    line-height: 24px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.device__managermaent-infor-column-title p,
+.device__managermaent-infor-column-other-title p {
+    position: absolute;
+    top: 4px;
+    right: -8px;
+
+    
+}
+
+.device__managerment-infor-column p,
+.device__managerment-infor-column-other p {
+    color: var(--text-primary-color);
+}
+
+.device__managerment-infor-column input,
+.device__managerment-infor-column-other input{
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    line-height: 44px;
+    padding-left: 16px;
+    margin-top: 8px;
+    border: 2px solid var(--border-color) ;
+    border-radius: 8px;
+    opacity: 0.7;
+    box-sizing: border-box;
+    
+}
+
+.device__managermaent-infor-column-input {
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    line-height: 44px;
+    margin-top: 8px;
+    border: 2px solid var(--border-color) ;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.device__managermaent-infor-column-input p{
+    font-weight: 450;
+    color:gray;
+    margin-left: 16px;
+    opacity: 0.7;
+}
+
+.device__managerment-infor-column:first-child {
+    margin-right: 12px;
+}
+
+.device__managerment-infor-column:last-child {
+    margin-left: 12px;
+}
+
+.device__managerment-infor-column-other div:last-child {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7E7D88;
+    margin-top: 8px;
+    display: inline-flex;
+}
+
+.device__managermaent-infor-column-other-title {
+    display: inline-flex;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    height: 24px;
+    position: relative;
+}
+
+
+.device__managerment-infor-column-other-sub{
+    position: relative;
+    padding-top: 10px;
+}
+
+.device__managerment-infor-column-other-sub p{
+   position: absolute;
+   left: -8px;
+   top: 13px;
+    
+}
+
+.device__managermaent-infor-column-input {
+    position: relative;
+}
+
+.device__managerment-infor-column i,
+.device__managermaent-infor-column-list{
+    position: absolute;
+    
+}
+
+.device__managerment-infor-column i {
+    right: 3%;
+    top: 19%;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.device__managermaent-infor-column-input{
+    position: relative;
+}
+/* .device__managermaent-infor-column-list::before{
+    content: "";
+    height: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    transform: translateY(-100%);
+} */
+.device__managermaent-infor-column-list {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    left: 0;
+    width: 100%;
+    height: 106px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background: #FFFFFF;
+    z-index: 100;
+}
+
+.device__managermaent-infor-column-input:hover .device__managermaent-infor-column-list{
+    display:block;
+}
+
+.device__managermaent-infor-column-list ul {
+    list-style: none;
+    margin-top: 9px;
+}
+
+.device__managermaent-infor-column-list li {
+    height: 44px;
+    line-height: 44px;
+    padding-left: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #282739;
+    cursor: pointer;
+}
+
+.device__managermaent-infor-column-list-item:hover {
+    background: #FFF2E7;
+}

@@ -1,0 +1,104 @@
+.inforpage {
+    position: relative;
+    width: 100%;
+}
+
+.inforpage__user {
+    position: absolute;
+    width: 77.2%;
+    height: 397px;
+    left: 55%;
+    top: 228px;
+    transform: translateX(-50%); 
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px rgba(219, 219, 219, 0.5);
+    border-radius: 12px;
+    display: flex;
+}
+
+
+.inforpage__user-avatar {
+    width: 248px;
+    padding: 24px;
+    position: relative;
+    padding-right: 0;
+}
+
+.inforpage__user-avatar img {
+    width: 248px;
+    height: 248px;
+    border-radius: 124px;
+    margin-top: 16px;
+}
+
+.inforpage__user-avatar div {
+    width: 40px;
+    height: 40px;
+    border-radius: 22px;
+    border: 2px solid #fff;
+    background-color: #FF7506;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 20%;
+    top: 248px;
+}
+
+.inforpage__user-avatar p{
+    width: 248px;
+    font-size: 24px;
+    line-height: 36px;
+    position: absolute;
+    bottom: 54px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.inforpage__user-camera {
+    width: 25px;
+    height: 21px;
+    color: #fff;
+}
+
+
+.inforpage__user-infor-detail {
+    margin-top: 16px;
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.inforpage__user-infor-detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.inforpage__user-infor-detail-column {
+    width: 50%;
+    font-size: 16px;
+}
+
+.inforpage__user-infor-detail-column:first-child {
+    margin-right: 12px;
+}
+.inforpage__user-infor-detail-column:last-child {
+    margin-left: 12px;
+}
+
+.inforpage__user-infor-detail-column div{
+    height: 44px;
+    background-color: #EAEAEC;
+    line-height: 44px;
+    padding-left: 16px;
+    color: #535261;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+
+.inforpage__user-infor-detail-column p{
+    opacity: 0.5;
+}

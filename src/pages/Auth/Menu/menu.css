@@ -1,0 +1,255 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.menu__page{
+    position: absolute;
+    display: flex;     
+    height: 100vh;     
+    width: 100%;
+}
+
+.page{
+    position: absolute;
+    background-color: #FFF;
+    height: 100%;
+    width: 14%;
+}
+
+.content {
+    position: absolute;
+    background: #F7F7F7;    
+    left: 268.5px;
+    width: 86%;
+    height: 100%;
+    
+}
+
+.menu__item{
+    position: relative;
+    list-style: none;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #7E7D88;
+    box-sizing: border-box;
+}
+
+.item{
+    padding-top: 18px;
+    padding-bottom: 18px;
+    width: 100%;
+}
+.item:hover {
+    background-color: #FF7506;
+   
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px ;
+    padding-left: 20px;
+}
+
+.icon_treedot{
+    width: 4px;
+    margin-left: 15px;
+    
+}
+
+
+.item a{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #7E7D88
+}
+
+.item:hover a{
+    color: #FFF;
+}
+
+.item__have-list:hover .menu__item-setting {
+    display: block;
+}
+
+.menu__sign--out {
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.menu__sign--out button {
+    
+    text-align: left;
+    color: #FF7506;
+    width: 196px;
+    height: 50px;
+    margin-left: 32px;
+    margin-bottom: 30px;
+    background: #FFF2E7;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+}
+
+.menu__sign--out img {
+    margin-right: 10px;
+    margin-left: 15px;
+    left: 0;
+}
+
+.menu__sign--out span {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+
+.logo-alta img{
+    max-width: 45%;
+    max-height: 50%;
+
+}
+
+.logo-alta{
+    text-align: center;
+    padding-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+    box-sizing: border-box;
+}
+
+.item__have-list{
+    position: relative;
+}
+
+.menu__item-setting{
+    position: absolute;
+    display: none;
+    left: 269px;
+    top: 0;
+    width: 200px;
+    height: 144px;
+    background-color:#FFF;
+    border-bottom-right-radius: 12px ;
+    border-top-right-radius: 12px ;
+    overflow: hidden;
+    filter: drop-shadow(3px 3px 4px rgba(70, 64, 67, 0.1));
+    z-index: 100;
+
+}
+
+.menu__item-setting-list{
+    list-style: none;
+    border-radius: 12px;
+}
+
+.menu__item-setting-list li{
+    height: 48px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 48px;
+    box-sizing: border-box;
+    padding-left: 16px;
+    color: #7E7D88;
+}
+.menu__item-setting-list li:hover{
+    background-color:#FF7506;
+    color: #FFF;
+}
+
+.content__header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.content__header-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FF9138;
+    margin-left: 50px;
+}
+
+.content__header-user {
+    display: inline-flex;
+    margin-right: 300px;
+    align-items: center;
+}
+
+.content__header-user-avatar {
+    display: inline-flex;
+    align-items: center;
+}
+
+.content__header-user-avatar-bell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 35px;
+    width: 42px;
+    height: 42px;
+    background: #FFF2E7;
+    border-radius: 32px;
+}
+
+.content__header-user-avatar-bell i {
+    color: #FFAC6A;
+}
+
+.content__header-user-avatar-img {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 48px;
+
+}
+
+.content__header-user-avatar-infor {
+    position: absolute;
+    right: 140px;
+    list-style: none;
+}
+
+.content__header-user-avatar-infor--hello,
+.content__header-user-avatar-infor--name,
+.content__header-title  {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+}
+
+.content__header-user-avatar-infor--hello {
+    width: 47px;
+    height: 18px;
+    right: 77px;
+    top: 0px;
+    color: #7E7D88;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.content__header-user-avatar-infor--name {
+    width: 150px;
+    height: 24px;
+    right: 0px;
+    top: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #535261;
+}
