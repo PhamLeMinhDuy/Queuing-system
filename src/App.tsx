@@ -3,14 +3,20 @@ import Forget from './pages/Auth/ForgetPage/Forget';
 import ResetPass from './pages/Auth/ResetPassword/ResetPassword';
 import Menu from './pages/Auth/Menu/menu';
 import { Inforpage } from './pages/Auth/Information/inforpage';
-import { DeviceManagerment } from './pages/Auth/DevicePage/DeviceManagermernt/DeviceManagermant';
+import { DeviceManagerment } from './pages/Auth/DevicePage/DeviceManagermernt/DeviceManagerment';
 import { DeviceDetail } from './pages/Auth/DevicePage/DeviceDetail/DeviceDetail';
+import { DeviceUpdate } from './pages/Auth/DevicePage/DeviceUpdate/DeviceUpdate';
+import { ProvideNumber } from './pages/Auth/ProvideNumber/ProvideNumberPage/ProvideNumber';
+import { ProvideNumberDetail } from './pages/Auth/ProvideNumber/ProvideNumberDetail/ProvideNumberDetail';
+import { AccountSetting } from './pages/Auth/Setting/AccountSetting/AccountSetting';
+import { AddService } from './pages/Auth/Service/AddService/AddService';
+import { RoleList } from './pages/Auth/Setting/RoleList/AddRoleList/RoleList';
 import './App.css';
 function App() {
 
 
   return (
-      <DeviceDetail/>
+      <RoleList/>
   )
 
   
