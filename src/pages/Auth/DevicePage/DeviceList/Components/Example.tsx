@@ -1,5 +1,4 @@
 import React from 'react'
-import { CellProps } from 'react-table';
 import { Table } from './Table';
 import { useState } from 'react';
 
