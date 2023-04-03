@@ -38,6 +38,20 @@ export const DeviceList = () => {
                 </div>
               </div>
             </div>
+            <div className="device__list-table">
+              <Example/>
+            </div>
+            <div className="device__list-table-page-number">
+              <div className="device__list-table-page-number-arrow"><i className="fa-solid fa-caret-left"></i></div>
+              <div className="device__list-table-page-number-element">1</div>
+              <div className="device__list-table-page-number-element">2</div>
+              <div className="device__list-table-page-number-element">3</div>
+              <div className="device__list-table-page-number-element">4</div>
+              <div className="device__list-table-page-number-element">5</div>
+              <div className="device__list-table-page-number-element">...</div>
+              <div className="device__list-table-page-number-element">10</div>
+              <div className="device__list-table-page-number-arrow"><i className="fa-solid fa-caret-right"></i></div>
+            </div>
           </div>
           <div className="device__list-search-keyword">
             <p>Từ khóa</p>
@@ -47,9 +61,6 @@ export const DeviceList = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="device__list-table">
-        <Example/>
       </div>
       <div className="device__list-add">
         <span>

@@ -1,48 +1,43 @@
-.device__list-page {
+.service__list-page {
     position: relative;
     width: 100%;
 }
 
-.device__list-page-sub-header{
+.service__list-page-sub-header{
     position: absolute;
     transform:translateY( 160px);  
     margin-left: 16%;
     width: 75%;
 }
 
-.device__list-page-sub-header h1 {
+.service__list-page-sub-header h1 {
 
     color: var(--text-primary-color);
 }
 
-.device__list-search {
+.service__list-search {
     display: flex;
     justify-content:  space-between;
     box-sizing: border-box;
     margin-top: 30px;
 }
 
-.device__list-search-state {
+.service__list-search-state-time {
     width: 50%;
     display: flex;
     justify-content: space-between;
 }
 
-.device__list-search-state--active p,
-.device__list-search-state--connect p,
-.device__list-search-keyword p
+.service__list-search-state-time p,
+.service__list-search-keyword p
  {
     font-weight: 600;
     font-size: 16px;
 }
 
-.device__list-search-state--connect{
-    width: 50%;
-}
 
-.device__list-search-state--active-input,
-.device__list-search-state--connect-input,
-.device__list-search-keyword input {
+.service__list-search-state-input,
+.service__list-search-keyword input {
     display: flex;
     width: 300px;
     height: 40px;
@@ -55,14 +50,14 @@
     margin-top: 10px;
 }
 
-.device__list-search-keyword input {
+.service__list-search-keyword input {
     padding-left: 6px;
 }
 
-.device__list-search-keyword-input {
+.service__list-search-keyword-input {
     position: relative;
 }
-.device__list-search-keyword i {
+.service__list-search-keyword i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -71,8 +66,7 @@
 
 }
 
-.device__list-search-state--active-input p,
-.device__list-search-state--connect-input p {
+.service__list-search-state-input p {
     position: relative;
     padding-left: 8px;
     width: 50%;
@@ -82,15 +76,13 @@
     font-weight: 400;
 }
 
-.device__list-search-state--active-input i,
-.device__list-search-state--connect-input i {
-    padding-right: 16px;
+.service__list-search-state-input i {
+    margin-right: 16px;
     color: var(--text-primary-color);
     box-sizing: border-box;
 }
 
-.device__list-search-state--active-input-list,
-.device__list-search-state--connect-input-list {
+.service__list-search-state-input-list {
     position: absolute;
     top: 75%;
     transform: translateY(24%);
@@ -103,55 +95,52 @@
     z-index: 10;
 }
 
-.device__list-search-state--active-input-list ul,
-.device__list-search-state--connect-input-list ul {
+.service__list-search-state-input-list ul {
     list-style: none;
 }
 
-.device__list-search-state-input-list-item {
+.service__list-search-state-input-list-item {
     height: 44px;
     line-height: 44px;
     padding-left: 6px;
     
 }
 
-.device__list-search-state-input-list-item:first-child {
+.service__list-search-state-input-list-item:first-child {
     margin-top: 10px;
 } 
 
-.device__list-search-state-input-list-item:last-child {
+.service__list-search-state-input-list-item:last-child {
     margin-bottom: 10px;
 } 
-.device__list-search-state-input-list-item:hover {
+.service__list-search-state-input-list-item:hover {
     background: #FFF2E7;
 }
 
-.device__list-search-state--active-input:hover .device__list-search-state--active-input-list{
+.service__list-search-state-input:hover .service__list-search-state-input-list{
     display: block;
 }
 
-.device__list-search-state--active-input:hover,
-.device__list-search-state--connect-input:hover{
+.service__list-search-state-input:hover {
     border: 1.5px solid var(--text-primary-color);
 }
 
-.device__list-search-state--connect-input:hover .device__list-search-state--connect-input-list{
-    display: block;
-}
-
-.device__list-search-state--active-input:hover i,
-.device__list-search-state--connect-input:hover i {
+.service__list-search-state-input:hover i {
     transform: rotate(180deg);
 }
 
-.device__list-page-sub-header {
+.service__list-search-state--connect-input:hover .service__list-search-state--connect-input-list{
+    display: block;
+}
+
+.service__list-page-sub-header {
     position: relative;
 }
 
-.device__list-table {
+.service__list-table {
     position: absolute;
     top: 0;
-    transform: translate(-230px, 150px);
+    transform: translate(-560px, 150px);
     margin-left: 16%;
     width: 100%;
     height: 533px;
@@ -161,7 +150,7 @@
 
 }
 
-.device__list-add {
+.service__list-add {
     position: absolute;
     transform:translateY( 160px); 
     background: #FFF2E7;
@@ -172,13 +161,13 @@
     text-align: center;
 }
 
-.device__list-add span{
+.service__list-add span{
     position: absolute;
     display: block;
     margin-top: 12px;
 }
 
-.device__list-add p {
+.service__list-add p {
     width: 72px;
     font-weight: 600;
     font-size: 16px;
@@ -188,16 +177,16 @@
     margin: 4px 4px 12px 4px;
 }
 
-.device__list-add i {
+.service__list-add i {
     color: var(--text-primary-color);
     font-size: 28px;
 }
 
-.device__list-page-sub-header {
+.service__list-page-sub-header {
     position: relative;
 }
 
-.device__list-table-page-number {
+.service__list-table-page-number {
     display: flex;
     align-items: center;
     position: absolute;
@@ -206,21 +195,51 @@
     
 }
 
-.device__list-table-page-number-arrow, 
-.device__list-table-page-number-element {
+.service__list-table-page-number-arrow, 
+.service__list-table-page-number-element {
     width: 32px;
     height: 32px;
     line-height: 32px;
 }
 
-.device__list-table-page-number-arrow {
+.service__list-table-page-number-arrow {
     color: #7E7D88;
     text-align: center;
 }
 
-.device__list-table-page-number-element {
+.service__list-table-page-number-element {
     background: #FF7506;
     border-radius: 4px;
     text-align: center;
 
 }
+
+.service__list-search-time-table p{
+    margin-bottom: 8px;
+}
+
+.service__list-search-time-input {
+    transform: translateX(-20px);
+    z-index: 1000;
+}
+
+.service__list-search-time-input-table {
+    position: relative;
+    
+}
+  
+.service__list-search-time-input {
+    position: absolute;
+    z-index: 1;
+    left: 25%;
+} 
+
+.service__list-search-time p{
+    transform: translateX(-220%);
+}
+
+.service__list-table {
+    left: 23%;
+}
+
+

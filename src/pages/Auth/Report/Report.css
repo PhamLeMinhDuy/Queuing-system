@@ -1,0 +1,130 @@
+.report__list-page {
+    position: relative;
+    width: 100%;
+}
+
+.report__list-page-sub-header{
+    position: absolute;
+    transform:translateY( 160px);  
+    margin-left: 16%;
+    width: 75%;
+}
+
+ .report__list-search {
+    box-sizing: border-box; 
+}
+
+.report__list-search-state-time {
+    width: 100%;
+}
+
+.report__list-search-state-time p
+ {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.report__list-page-sub-header {
+    position: relative;
+}
+
+.report__list-table {
+    position: absolute;
+    top: 0;
+    transform: translate(-560px, 150px);
+    margin-left: 16%;
+    width: 100%;
+    height: 533px;
+    margin-top: 10px;
+    overflow: hidden;
+    filter: drop-shadow(2px 2px 8px rgba(232, 239, 244, 0.8));
+
+}
+
+.report__list-add {
+    position: absolute;
+    transform:translateY( 160px); 
+    background: #FFF2E7;
+    margin-top: 10px;
+    right: 0;
+    width: 80px;
+    height: 94px;
+    text-align: center;
+}
+
+.report__list-add span{
+    position: absolute;
+    display: block;
+    margin-top: 12px;
+}
+
+.report__list-add p {
+    width: 72px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    height: 38px;
+    color: var(--text-primary-color);
+    margin: 4px 4px 12px 4px;
+}
+
+.report__list-add i {
+    color: var(--text-primary-color);
+    font-size: 28px;
+}
+
+.report__list-page-sub-header {
+    position: relative;
+}
+
+.report__list-table-page-number {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transform: translateY(650px);
+    right: 0;
+    
+}
+
+.report__list-table-page-number-arrow, 
+.report__list-table-page-number-element {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.report__list-table-page-number-arrow {
+    color: #7E7D88;
+    text-align: center;
+}
+
+.report__list-table-page-number-element {
+    background: #FF7506;
+    border-radius: 4px;
+    text-align: center;
+
+}
+
+.report__list-search-time-table p{
+    margin-bottom: 8px;
+}
+
+.report__list-search-time-input-table {
+    position: relative;
+    
+}
+  
+.report__list-search-time-input {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    transform: translateX(-20px);
+} 
+
+.report__list-table {
+    position: absolute;
+    left: 23%;
+    top: -350%;
+}
+

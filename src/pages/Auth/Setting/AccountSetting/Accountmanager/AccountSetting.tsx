@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from '../../Menu/menu'
+import Menu from '../../../Menu/menu'
 import './AccountSetting.css'
 import { EyeOff } from 'react-feather'
 export const AccountSetting = () => {

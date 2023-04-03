@@ -1,11 +1,11 @@
-.dot-red::before {
+.dot-blue::before {
     content: "";
     display: inline-block;
     width: 8px;
     height: 8px;
     margin-right: 4px;
     border-radius: 50%;
-    background: #EC3740;
+    background: #5490EB;
 }
   
 .dot-green::before {
@@ -18,10 +18,20 @@
     background: #35C75A;
 }
 
+.dot-purple::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: purple;
+}
+
 table {
     border-collapse: collapse;
-    width: 100%;
-    height: 490px;
+    width: 95%;
+    height: 441px;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -41,37 +51,27 @@ th {
 }
   
 th:first-child {
-    width: 103px;
+    width: 334px;
 }
   
 th:nth-child(2) {
-    width: 99px;
+    width: 334px;
 }
   
 th:nth-child(3) {
-    width: 138px;
-  }
+    width: 230px;
+}
   
 th:nth-child(4) {
-    width: 171px;
+    width: 253px;
 }
   
-th:nth-child(5) {
-    width: 145px;
-}
   
+th:nth-child(5),
 th:nth-child(6) {
-    width: 268px;
+    width: 125px;
 }
   
-th:nth-child(7),
-th:nth-child(8) {
-  width: 82px;
-}
-  
-th:nth-child(8) {
-    width: 106px;
-}
 
 tr:nth-child(even) {
     background-color: #FFF2E7;
@@ -79,22 +79,4 @@ tr:nth-child(even) {
   
 tr:nth-child(odd) {
     background-color: white;
-}
-
-.truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    /* Thêm thuộc tính này để giới hạn độ rộng của phần tử */
-    max-width: 200px;
-}
-.underline {
-    background:none;
-    color: blue;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-size: 16px;
-    border-bottom: 1px solid blue;
-    cursor: pointer;
 }

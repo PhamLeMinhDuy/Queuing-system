@@ -41,37 +41,27 @@ th {
 }
   
 th:first-child {
-    width: 103px;
+    width: 150px;
 }
   
 th:nth-child(2) {
-    width: 99px;
+    width: 224px;
 }
   
 th:nth-child(3) {
-    width: 138px;
-  }
+    width: 537px;
+}
   
 th:nth-child(4) {
-    width: 171px;
+    width: 125px;
 }
   
-th:nth-child(5) {
-    width: 145px;
-}
   
+th:nth-child(5),
 th:nth-child(6) {
-    width: 268px;
+    width: 125px;
 }
   
-th:nth-child(7),
-th:nth-child(8) {
-  width: 82px;
-}
-  
-th:nth-child(8) {
-    width: 106px;
-}
 
 tr:nth-child(even) {
     background-color: #FFF2E7;
@@ -79,22 +69,4 @@ tr:nth-child(even) {
   
 tr:nth-child(odd) {
     background-color: white;
-}
-
-.truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    /* Thêm thuộc tính này để giới hạn độ rộng của phần tử */
-    max-width: 200px;
-}
-.underline {
-    background:none;
-    color: blue;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-size: 16px;
-    border-bottom: 1px solid blue;
-    cursor: pointer;
 }
