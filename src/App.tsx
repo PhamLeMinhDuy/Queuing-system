@@ -21,13 +21,14 @@ import { Report } from './pages/Auth/Report/Report';
 import { Role } from './pages/Auth/Role/Role';
 import { AccountList } from './pages/Auth/Setting/AccountSetting/AccountList/AccountList';
 import { ServiceDetail } from './pages/Auth/Service/ServiceDetail/ServiceDetail';
+import { ProvideNumberList } from './pages/Auth/ProvideNumber/ProvideNumberList/ProvideNumberList';
 import './App.css';
 
 function App() {
 
 
   return (
-      <SearchBox/>
+      <ProvideNumberList/>
   )
 
   
