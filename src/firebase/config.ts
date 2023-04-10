@@ -1,16 +1,26 @@
-import firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-export const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_API_ID,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
-  };
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyANdZt64VPjqZHIB-QwERkm_GVlo_nh0Ks",
+  authDomain: "queuing-system-6e62f.firebaseapp.com",
+  projectId: "queuing-system-6e62f",
+  storageBucket: "queuing-system-6e62f.appspot.com",
+  messagingSenderId: "474819130528",
+  appId: "1:474819130528:web:f9b508c6d1b6b2d13585c5",
+  measurementId: "G-179YQMG8M8"
+};
 
-firebase.initializeApp(firebaseConfig);
-export default firebaseConfig;
+// Initialize Firebase
+initializeApp(firebaseConfig);
+export const db = getFirestore(initializeApp(firebaseConfig));
+
+// Get a list of cities from your database
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(initializeApp(firebaseConfig));

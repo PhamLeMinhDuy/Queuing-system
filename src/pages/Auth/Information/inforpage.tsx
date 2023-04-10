@@ -1,9 +1,28 @@
 import Menu from "../Menu/menu";
-import React from 'react'
+import { getDatabase, ref, child, get } from "firebase/database";
+import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import { db, auth } from "../../../firebase/config";
+import React, { useEffect, useState } from 'react'
 import avatar from "./avatar/avatar_cat.jpg"
 import './inforpage.css'
 import {Camera} from "react-feather"  
 export const Inforpage = () => {
+    const colRef = collection(db, 'users'); 
+    getDocs(colRef)
+    .then((snapshot) => {
+        let users: any = []
+        snapshot.docs.forEach((doc) => {
+            users.push({...doc.data(), id: doc.id})
+        })
+        console.log(users)
+    })
+    .catch((err) => {
+        console.log(err.message)
+    })
+
   return (
     <div className="inforpage">
         <Menu/>
@@ -58,7 +77,7 @@ export const Inforpage = () => {
                             Email
                             <div>
                                 <p>
-                                vlu@......
+                                {auth.currentUser?.email}
                                 </p>
                             </div>
                        </div>

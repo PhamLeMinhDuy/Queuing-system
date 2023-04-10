@@ -22,13 +22,26 @@ import { Role } from './pages/Auth/Role/Role';
 import { AccountList } from './pages/Auth/Setting/AccountSetting/AccountList/AccountList';
 import { ServiceDetail } from './pages/Auth/Service/ServiceDetail/ServiceDetail';
 import { ProvideNumberList } from './pages/Auth/ProvideNumber/ProvideNumberList/ProvideNumberList';
+import CalendarComponent from './pages/Auth/DashBoard/Calendar/Calendar';
+import DashBoardMenu from './pages/Auth/DashBoard/DashBoardMenu/DashBoardMenu';
+import { DashboardPage } from './pages/Auth/DashBoard/Dashboard';
+import Areachart from './pages/Auth/DashBoard/DashBoardMenu/LineChart/AreaChart';
+
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
 
   return (
-      <ProvideNumberList/>
+    
+      <div>
+        <Routes>
+          <Route path='/' element={<Login/>}></Route>
+          <Route path='/inforpage' element={<Inforpage/>}></Route>
+          <Route path='/servicelist' element={<ServiceList/>}></Route>
+        </Routes>
+      </div>
   )
 
   

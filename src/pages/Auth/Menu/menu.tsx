@@ -12,7 +12,9 @@ import { Monitor } from 'react-feather'
 import { Bell } from 'react-feather'
 import avatar_cat from './avatar/avatar_cat.jpg'
 import './menu.css'
+import { Link, useNavigate } from 'react-router-dom'
 export const Menu = () => {
+    const navigate = useNavigate();
   return (
     <div className="menu__page">
         <div className="page">
@@ -35,7 +37,7 @@ export const Menu = () => {
                         </a>
                     </li>
                     <li className='item'>
-                        <a href='#'>
+                        <a href='/servicelist'>
                             <img className='icon' src={service_icon} />
                             Dịch vụ
                         </a>
@@ -70,7 +72,7 @@ export const Menu = () => {
                     
                 </ul>
                 <div className="menu__sign--out">
-                    <button>
+                    <button onClick={() => navigate('/')}>
                         <span>
                             <img src={logout_icon}/>
                             Đăng xuất

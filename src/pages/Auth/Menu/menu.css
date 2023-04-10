@@ -39,9 +39,9 @@
 }
 
 .item{
-    padding-top: 18px;
-    padding-bottom: 18px;
-    width: 100%;
+    padding: 18px;
+    width: 120%;
+    box-sizing: border-box;
 }
 .item:hover {
     background-color: #FF7506;
@@ -52,7 +52,7 @@
     width: 20px;
     height: 20px;
     margin-right: 10px ;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 .icon_treedot{
