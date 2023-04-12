@@ -242,4 +242,6 @@
     left: 23%;
 }
 
-
+.service__list-search-time-title {
+    transform: translateX(-50%);
+}

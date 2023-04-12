@@ -101,7 +101,7 @@ export const AccountSetting = () => {
           </div>
           <div className="account__setting-btn">
             <input type="submit" className='account__setting-btn--cancel btn' value='Hủy bỏ' />
-            <input type="submit" className='account__setting-btn--submit btn primary-btn' value='Cập nhật' />
+            <input type="submit" className='account__setting-btn--submit btn primary-btn' value='Thêm' />
           </div>
         </div>
     </div>

@@ -56,7 +56,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },
         {
             id: '2',
@@ -66,7 +66,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },{
             id: '3',
             userName: 'tuyetnguyen@12',
@@ -75,7 +75,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Ngưng hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },{
             id: '4',
             userName: 'tuyetnguyen@12',
@@ -84,7 +84,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },{
             id: '5',
             userName: 'tuyetnguyen@12',
@@ -93,7 +93,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Ngưng hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },{
             id: '6',
             userName: 'tuyetnguyen@12',
@@ -102,7 +102,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },{
             id: '7',
             userName: 'tuyetnguyen@12',
@@ -111,7 +111,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },{
             id: '8',
             userName: 'tuyetnguyen@12',
@@ -120,7 +120,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Ngưng hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },{
             id: '9',
             userName: 'tuyetnguyen@12',
@@ -129,7 +129,7 @@ export const Table = () => {
             email: 'tuyetnguyen12@gmail.com',
             role: 'Kế toán',
             state: 'Hoạt động',
-            update:<a href="#">Cập nhật</a>
+            update:<a href="/updateaccount">Cập nhật</a>
         },
     ]
   return (

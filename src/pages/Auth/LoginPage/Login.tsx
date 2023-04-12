@@ -58,9 +58,9 @@ const forgetPasswordClass = error ? 'forget-password error' : 'forget-password';
             <div className='from-control__pass'>
               <input  type={showPassword ? 'text' : 'password'} className={`form-control ${error ? 'error' : ''}`} id="password" placeholder=" Password " onChange={handlePasswordChange} />
               {showPassword ? (
-                <Eye className="eye" size={20} onClick={handleShowPassword} />
+                <Eye className="eye" onClick={handleShowPassword} />
               ) : (
-                <EyeOff className="eye-off" size={20} onClick={handleShowPassword} />
+                <EyeOff className="eye-off" onClick={handleShowPassword} />
               )}
             </div>
             
@@ -73,7 +73,7 @@ const forgetPasswordClass = error ? 'forget-password error' : 'forget-password';
             <span className="error-icon"><AlertCircle size={16} /></span>
           </p>
         )}
-          <a href="#" className='forget-link'>Quên mật khẩu?</a>
+          <a href="/forget" className='forget-link'>Quên mật khẩu?</a>
         </div>
         <button className='primary-btn btn' type="submit" onClick={handleLogin}> Đăng nhập</button>
         

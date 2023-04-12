@@ -12,7 +12,7 @@
 .device__detail {
     position: absolute;
     width: 30%;
-    height: 636px;  
+    height: 680px;  
     left: 32%;
     top: 228px;
     transform: translateX(-50%); 
@@ -103,7 +103,7 @@
 .device__detail-table {
     position: absolute;
     width: 45%;
-    height: 636px;  
+    height: 680px;  
     left: 70%;
     top: 228px;
     transform: translateX(-50%); 
@@ -243,12 +243,12 @@
     position: relative;
 }
 
-.service__list-table {
+.service__list-table-detail {
     position: absolute;
     top: 0;
     transform: translate(-560px, 150px);
     margin-left: 16%;
-    width: 100%;
+    width: 95%;
     height: 533px;
     margin-top: 10px;
     overflow: hidden;
@@ -305,11 +305,11 @@
     position: relative;
 }
 
-.service__list-table-page-number {
+.service__list-table-page-number-detail {
     display: flex;
     align-items: center;
     position: absolute;
-    transform: translateY(550px);
+    transform: translateY(600px);
     right: 0;
     
 }
@@ -357,9 +357,9 @@
     transform: translateX(-220%);
 }
 
-.service__list-table {
+.service__list-table-detail {
     display: absolute;
-    right: -68%;
+    right: -63%;
     top: -7%;
     overflow: hidden;
 }

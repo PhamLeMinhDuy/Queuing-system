@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTable } from 'react-table';
-import './Table.css'
+import './TableDeviceList.css'
 export const Table = ({columns, data}: any) => {
     const {
         getTableProps,
@@ -13,12 +13,13 @@ export const Table = ({columns, data}: any) => {
         data,
       })
   return (
-    <table {...getTableProps()}>
+    <table style={{width: "100%",
+      height: "490px"}}{...getTableProps()}>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              <th className='th-table-devicelist' {...column.getHeaderProps()}>{column.render('Header')}</th>
             ))}
           </tr>
         ))}
@@ -29,7 +30,7 @@ export const Table = ({columns, data}: any) => {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => (
-                <td {...cell.getCellProps()} 
+                <td style={{height:"49px"}}{...cell.getCellProps()} 
                     className={
                     cell.column.id === "activeState"
                       ? cell.value === "Hoạt động"

@@ -49,16 +49,19 @@
 
 .from-control__pass{
     position: relative;
+    max-width: 400px;
 }
 
-.eye-off, .eye{
+.eye-off, 
+.eye{
     position: absolute;
-    right: 15px;
-    right: 10%;
+    right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     cursor: pointer;
 }
+
+
 
 
 .forget-password {

@@ -62,7 +62,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Đang chờ',
             update: 'Kiosk',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
         {
             id: '2',
@@ -73,7 +73,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Đã sử dụng',
             update: 'Kiosk',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
         {
             id: '3',
@@ -84,7 +84,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Đang chờ',
             update: 'Hệ thống',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
         {
             id: '4',
@@ -95,7 +95,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Đang chờ',
             update: 'Hệ thống',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
         {
             id: '5',
@@ -106,7 +106,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Đang chờ',
             update: 'Kiosk',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
         {
             id: '6',
@@ -117,7 +117,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Đã sử dụng',
             update: 'Hệ thống',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
         {
             id: '7',
@@ -128,7 +128,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Đã sử dụng',
             update: 'Kiosk',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
         {
             id: '8',
@@ -139,7 +139,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Bỏ qua',
             update: 'Hệ thống',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
         {
             id: '9',
@@ -150,7 +150,7 @@ export const Table = () => {
             expiry: '14:35-07/11/2021',
             state:'Đã sử dụng',
             update: 'Hệ thống',
-            detail: <a href="#">Chi tiết</a>,
+            detail: <a href="/providenumberdetail">Chi tiết</a>,
         },
     ]
   return (

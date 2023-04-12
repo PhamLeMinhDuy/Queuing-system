@@ -2,7 +2,7 @@ import React from 'react'
 import { TableCreate } from './TableCreate';
 import { useState } from 'react';
 
-export const Table = () => {
+export const TableService = () => {
     interface Column {
         Header: string;
         accessor: string;
@@ -49,8 +49,8 @@ export const Table = () => {
             serviceName: 'Kiosk',
             serviceDes: 'Hoạt động',
             serviceState: 'Hoạt động',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
+            detail: <a href="/servicedetail">Chi tiết</a>,
+            update: <a href="/updateservice">Cập nhật</a>
         },
         {
             id: '2',
@@ -58,8 +58,8 @@ export const Table = () => {
             serviceName: 'Kiosk',
             serviceDes: 'Hoạt động',
             serviceState: 'Hoạt động',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
+            detail: <a href="/servicedetail">Chi tiết</a>,
+            update: <a href="/updateservice">Cập nhật</a>
         },
         {
             id: '3',
@@ -67,8 +67,8 @@ export const Table = () => {
             serviceName: 'Kiosk',
             serviceDes: 'Hoạt động',
             serviceState: 'Hoạt động',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
+            detail: <a href="/servicedetail">Chi tiết</a>,
+            update: <a href="/updateservice">Cập nhật</a>
         },
         {
             id: '4',
@@ -76,8 +76,8 @@ export const Table = () => {
             serviceName: 'Kiosk',
             serviceDes: 'Hoạt động',
             serviceState: 'Ngưng hoạt động',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
+            detail: <a href="/servicedetail">Chi tiết</a>,
+            update: <a href="/updateservice">Cập nhật</a>
         },
         {
             id: '5',
@@ -85,8 +85,8 @@ export const Table = () => {
             serviceName: 'Kiosk',
             serviceDes: 'Hoạt động',
             serviceState: 'Hoạt động',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
+            detail: <a href="/servicedetail">Chi tiết</a>,
+            update: <a href="/updateservice">Cập nhật</a>
         },
         {
             id: '6',
@@ -94,8 +94,8 @@ export const Table = () => {
             serviceName: 'Kiosk',
             serviceDes: 'Hoạt động',
             serviceState: 'Hoạt động',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
+            detail: <a href="/servicedetail">Chi tiết</a>,
+            update: <a href="/updateservice">Cập nhật</a>
         },
         {
             id: '7',
@@ -103,8 +103,8 @@ export const Table = () => {
             serviceName: 'Kiosk',
             serviceDes: 'Hoạt động',
             serviceState: 'Ngưng hoạt động',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
+            detail: <a href="/servicedetail">Chi tiết</a>,
+            update: <a href="/updateservice">Cập nhật</a>
         },
     ]
   return (

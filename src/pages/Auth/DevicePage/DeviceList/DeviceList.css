@@ -84,7 +84,7 @@
 
 .device__list-search-state--active-input i,
 .device__list-search-state--connect-input i {
-    padding-right: 16px;
+    margin-right: 16px;
     color: var(--text-primary-color);
     box-sizing: border-box;
 }
@@ -191,6 +191,7 @@
 .device__list-add i {
     color: var(--text-primary-color);
     font-size: 28px;
+    cursor: pointer;
 }
 
 .device__list-page-sub-header {
@@ -224,3 +225,4 @@
     text-align: center;
 
 }
+

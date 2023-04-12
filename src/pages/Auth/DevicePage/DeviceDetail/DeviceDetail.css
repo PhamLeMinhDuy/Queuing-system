@@ -1,6 +1,7 @@
 .device__detail-page {
     position: relative;
     width: 100%;
+    height: 100vh;
 }
 
 .device__detail-page h1 {

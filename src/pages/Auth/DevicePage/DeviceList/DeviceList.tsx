@@ -1,8 +1,14 @@
 import Menu from "../../Menu/menu";
-import React from 'react'
+import React, {useState} from 'react'
 import './DeviceList.css'
 import { Example } from "./Components/Example";
 export const DeviceList = () => {
+    const [selectedItem, setSelectedItem] = useState<string>('Tất cả');
+
+    function handleItemClick(item:any) {
+      setSelectedItem(item);
+
+    }
   return (
     <div className="device__list-page">
       <Menu/>
@@ -13,13 +19,28 @@ export const DeviceList = () => {
             <div className="device__list-search-state--active">
               <p>Trạng thái hoạt động</p>
               <div className="device__list-search-state--active-input">
-                <p>Tất cả</p>
+              <p>{selectedItem}</p>
                 <i className="fa-solid fa-caret-down"></i>
                 <div className="device__list-search-state--active-input-list">
                   <ul>
-                    <li className="device__list-search-state-input-list-item">Tất cả</li>
-                    <li className="device__list-search-state-input-list-item">Hoạt động</li>
-                    <li className="device__list-search-state-input-list-item">Ngưng hoạt động</li>
+                  <li
+                    className="device__list-search-state-input-list-item"
+                    onClick={() => handleItemClick('Tất cả')}
+                  >
+                    Tất cả
+                  </li>
+                  <li
+                    className="device__list-search-state-input-list-item"
+                    onClick={() => handleItemClick('Hoạt động')}
+                  >
+                    Hoạt động
+                  </li>
+                  <li
+                    className="device__list-search-state-input-list-item"
+                    onClick={() => handleItemClick('Ngưng hoạt động')}
+                  >
+                    Ngưng hoạt động
+                  </li>
                   </ul>
                 </div>
               </div>
@@ -64,7 +85,9 @@ export const DeviceList = () => {
       </div>
       <div className="device__list-add">
         <span>
-          <i className="fa-solid fa-square-plus"></i>
+          <a href="/devicemanagerment">
+            <i className="fa-solid fa-square-plus"></i>
+          </a>
           <p>Thêm thiết bị</p>
         </span>
           

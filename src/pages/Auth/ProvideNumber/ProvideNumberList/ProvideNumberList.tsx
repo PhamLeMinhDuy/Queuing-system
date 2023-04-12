@@ -1,4 +1,5 @@
 import Menu from "../../Menu/menu";
+import { Link } from "react-router-dom";
 import React from 'react'
 import { Table } from "./Component/Table";
 import SearchBox from "./SearchBox/SearchBox";
@@ -95,7 +96,10 @@ export const ProvideNumberList = () => {
           </div>
           <div className="provide__list-add">
             <span>
+              <Link to="/providenumber">
               <i className="fa-solid fa-square-plus"></i>
+              </Link>
+              
               <p>Cấp số mới</p>
             </span>
               

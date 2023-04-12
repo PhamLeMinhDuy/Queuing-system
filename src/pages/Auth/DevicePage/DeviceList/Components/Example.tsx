@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Table } from './Table';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { DeviceDetail } from '../../DeviceDetail/DeviceDetail';
+import { CollectionReference, DocumentData, collection, getDocs } from 'firebase/firestore';
+import { db } from '../../../../../firebase/config';
 
 export const Example = () => {
+  const [list, setList] = React.useState<Record<string, any>>({});
+
     interface Column {
         Header: string;
         accessor: string;
@@ -10,17 +16,47 @@ export const Example = () => {
         cellClassName?: string;
       }
       
-    interface Data {
-        id: string;
-        deviceId: string;
-        deviceName: string;
-        deviceIP: string;
-        activeState: string;
-        connectState: string;
-        service: string;
-        detail: JSX.Element;
-        update: JSX.Element;
-    }
+    interface DeviceInterface {
+      id?: string;
+      deviceid?:string;
+      ip?:string;
+      name?:string;
+      service?:string;
+      stateactive?:string;
+      stateconnect?:string;
+  }
+  type DeviceWithId = {
+    id: string;
+  } & DeviceInterface & {
+    detail: JSX.Element;
+    update: JSX.Element;
+  };
+  const colRef: CollectionReference<DocumentData> = collection(db, 'devicelist'); 
+  useEffect(() => {
+    const getDevices = async () => {
+      const querySnapshot = await getDocs(colRef);
+      const devices: Record<string, DeviceInterface> = {};
+      querySnapshot.forEach((doc) => {
+        devices[doc.id] = doc.data() as DeviceInterface;
+      });
+      setList(devices);
+    };
+    getDevices();
+  }, []);
+
+  const data: DeviceWithId[] = Object.keys(list).map((deviceId) => ({
+    id: deviceId,
+    deviceId: list[deviceId].deviceid,
+    deviceName: list[deviceId].name,
+    deviceIP: list[deviceId].ip,
+    activeState: list[deviceId].stateactive,
+    connectState: list[deviceId].stateconnect,
+    service: list[deviceId].service,
+    detail: <a href={`/devicedetail/${deviceId}`}>Chi tiết</a>,
+    update: <a href={`/deviceupdate/${deviceId}`}>Cập nhật</a>,
+  }));
+
+
     const truncateString = (str: string, maxLength: number) => {
         if (str.length <= maxLength) {
           return str;
@@ -90,107 +126,107 @@ export const Example = () => {
             accessor: 'update',
         },
     ];
-    const data = [
-        {
-            id: '1',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Ngưng hoạt động',
-            connectState: 'Mất kết nối',
-            service: 'Khám tim mạch, Khám mắt',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-        {
-            id: '2',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Hoạt động',
-            connectState: 'Kết nối',
-            service: 'Khám tim mạch, Khám mắt',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-        {
-            id: '3',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Ngưng hoạt động',
-            connectState: 'Mất kết nối',
-            service: 'Khám tim mạch, Khám mắt',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-        {
-            id: '4',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Ngưng hoạt động',
-            connectState: 'Mất kết nối',
-            service: 'Khám tim mạch, Khám mắt, Khám tai mũi họng, Khám răng',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-        {
-            id: '5',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Ngưng hoạt động',
-            connectState: 'Mất kết nối',
-            service: 'Khám tim mạch, Khám mắt',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-        {
-            id: '6',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Ngưng hoạt động',
-            connectState: 'Mất kết nối',
-            service: 'Khám tim mạch, Khám mắt',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-        {
-            id: '7',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Hoạt động',
-            connectState: 'Kết nối',
-            service: 'Khám tim mạch, Khám mắt',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-        {
-            id: '8',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Ngưng hoạt động',
-            connectState: 'Mất kết nối',
-            service: 'Khám tim mạch, Khám mắt',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-        {
-            id: '9',
-            deviceId: 'KIO_01',
-            deviceName: 'Kiosk',
-            deviceIP: '192.68.1.10',
-            activeState: 'Hoạt động',
-            connectState: 'Kết nối',
-            service: 'Khám tim mạch, Khám mắt',
-            detail: <a href="#">Chi tiết</a>,
-            update: <a href="#">Cập nhật</a>
-        },
-    ]
+    // const data = [
+    //     {
+    //         id: '1',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Ngưng hoạt động',
+    //         connectState: 'Mất kết nối',
+    //         service: 'Khám tim mạch, Khám mắt',
+    //         detail: <a href='/devicedetail'>Chi tiết</a>,
+    //         update: <a href="/deviceupdate">Cập nhật</a>
+    //     },
+    //     {
+    //         id: '2',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Hoạt động',
+    //         connectState: 'Kết nối',
+    //         service: 'Khám tim mạch, Khám mắt',
+    //         detail: <a href="#">Chi tiết</a>,
+    //         update: <a href="#">Cập nhật</a>
+    //     },
+    //     {
+    //         id: '3',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Ngưng hoạt động',
+    //         connectState: 'Mất kết nối',
+    //         service: 'Khám tim mạch, Khám mắt',
+    //         detail: <a href="#">Chi tiết</a>,
+    //         update: <a href="#">Cập nhật</a>
+    //     },
+    //     {
+    //         id: '4',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Ngưng hoạt động',
+    //         connectState: 'Mất kết nối',
+    //         service: 'Khám tim mạch, Khám mắt, Khám tai mũi họng, Khám răng',
+    //         detail: <a href="#">Chi tiết</a>,
+    //         update: <a href="#">Cập nhật</a>
+    //     },
+    //     {
+    //         id: '5',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Ngưng hoạt động',
+    //         connectState: 'Mất kết nối',
+    //         service: 'Khám tim mạch, Khám mắt',
+    //         detail: <a href="#">Chi tiết</a>,
+    //         update: <a href="#">Cập nhật</a>
+    //     },
+    //     {
+    //         id: '6',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Ngưng hoạt động',
+    //         connectState: 'Mất kết nối',
+    //         service: 'Khám tim mạch, Khám mắt',
+    //         detail: <a href="#">Chi tiết</a>,
+    //         update: <a href="#">Cập nhật</a>
+    //     },
+    //     {
+    //         id: '7',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Hoạt động',
+    //         connectState: 'Kết nối',
+    //         service: 'Khám tim mạch, Khám mắt',
+    //         detail: <a href="#">Chi tiết</a>,
+    //         update: <a href="#">Cập nhật</a>
+    //     },
+    //     {
+    //         id: '8',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Ngưng hoạt động',
+    //         connectState: 'Mất kết nối',
+    //         service: 'Khám tim mạch, Khám mắt',
+    //         detail: <a href="#">Chi tiết</a>,
+    //         update: <a href="#">Cập nhật</a>
+    //     },
+    //     {
+    //         id: '9',
+    //         deviceId: 'KIO_01',
+    //         deviceName: 'Kiosk',
+    //         deviceIP: '192.68.1.10',
+    //         activeState: 'Hoạt động',
+    //         connectState: 'Kết nối',
+    //         service: 'Khám tim mạch, Khám mắt',
+    //         detail: <a href="#">Chi tiết</a>,
+    //         update: <a href="#">Cập nhật</a>
+    //     },
+    // ]
   return (
     <Table columns={columns} data={data} />
   )

@@ -4,11 +4,15 @@ import { ArrowUp, ArrowDown, Bookmark, Star, User, Phone } from 'react-feather'
 import { Toolbar } from './DashBoardMenu/LineChart/Toolbar'
 import Areachart from './DashBoardMenu/LineChart/AreaChart'
 import './Dashboard.css'
+import Menu from '../Menu/menu'
 
 export const DashboardPage = () => {
   return (
     <div className='dashboard__page'>
-      <DashBoardMenu/>
+      <Menu/>
+      <div className="dashboard__page menu">
+      <DashBoardMenu/> 
+      </div>
         <div className="dashboard__list-page-sub-header">
               <h1>Quản lý dịch vụ</h1>
               <div className="dashboard__list-page-sub-data-card">

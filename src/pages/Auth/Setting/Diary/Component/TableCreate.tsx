@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTable } from 'react-table';
-import './TableService.css'
+import './Table.css'
 export const TableCreate = ({columns, data}: any) => {
     const {
         getTableProps,
@@ -29,14 +29,19 @@ export const TableCreate = ({columns, data}: any) => {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => (
-                <td {...cell.getCellProps()} 
-                    className={
-                    cell.column.id === "serviceState"
-                      ? cell.value === "Hoạt động"
-                        ? "dot-green"
-                        : "dot-red"
-                      : ""
-                  }>{cell.render('Cell')}</td>
+                <td {...cell.getCellProps()}
+                className={
+                  cell.column.id === "state"
+                    ? cell.value === "Ngưng hoạt động"
+                      ? "dot-green"
+                      : cell.column.id === "state"
+                        ? cell.value === "Hoạt động"
+                          ? "dot-red"
+                          : "dot-purple"
+                          : ""
+                    : ""
+                } 
+                 >{cell.render('Cell')}</td>
               ))}
             </tr>
           );

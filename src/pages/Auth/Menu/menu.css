@@ -48,6 +48,10 @@
    
 }
 
+.item:hover a{
+    color: #F7F7F7;
+}
+
 .icon {
     width: 20px;
     height: 20px;
@@ -69,9 +73,9 @@
     color: #7E7D88
 }
 
-.item:hover a{
+/* .item:hover a{
     color: #FFF;
-}
+} */
 
 .item__have-list:hover .menu__item-setting {
     display: block;
@@ -155,7 +159,7 @@
     border-radius: 12px;
 }
 
-.menu__item-setting-list li{
+.menu__item-setting-list-item{
     height: 48px;
     font-family: 'Nunito', sans-serif;
     font-style: normal;
@@ -164,9 +168,9 @@
     line-height: 48px;
     box-sizing: border-box;
     padding-left: 16px;
-    color: #7E7D88;
+    color: #7E7D88 !important;
 }
-.menu__item-setting-list li:hover{
+.menu__item-setting-list-item:hover{
     background-color:#FF7506;
     color: #FFF;
 }
@@ -252,4 +256,12 @@
     font-size: 16px;
     line-height: 24px;
     color: #535261;
+}
+
+.menu__item-setting-list-item span{
+    color: #7E7D88 ;
+}
+
+.menu__item-setting-list-item:hover span {
+    color: #fff;
 }

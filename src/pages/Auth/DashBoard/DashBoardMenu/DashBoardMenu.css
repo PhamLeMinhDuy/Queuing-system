@@ -171,7 +171,7 @@
     color: #FFF;
 }
 
-.content__header{
+.content__header-dashboard{
     display: flex;
     justify-content: space-between;
 }
@@ -184,12 +184,11 @@
     margin-left: 50px;
 }
 
-.content__header-user {
+.content__header-user-dashboard {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding-top: 0;
     width: 500px;
     height: 100vh;
     background-color: #FFF;

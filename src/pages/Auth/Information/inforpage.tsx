@@ -1,6 +1,6 @@
 import Menu from "../Menu/menu";
 import { getDatabase, ref, child, get } from "firebase/database";
-import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import { collection, query, getDoc, getDocs, getFirestore, where, onSnapshot, QuerySnapshot, CollectionReference, DocumentData } from "firebase/firestore";
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -10,19 +10,34 @@ import avatar from "./avatar/avatar_cat.jpg"
 import './inforpage.css'
 import {Camera} from "react-feather"  
 export const Inforpage = () => {
-    const colRef = collection(db, 'users'); 
-    getDocs(colRef)
-    .then((snapshot) => {
-        let users: any = []
-        snapshot.docs.forEach((doc) => {
-            users.push({...doc.data(), id: doc.id})
-        })
-        console.log(users)
-    })
-    .catch((err) => {
-        console.log(err.message)
-    })
+    interface UserInterface {
+        id?: string;
+        name?:string;
+        account?:string;
+        email?:string;
+        password?:string;
+        role?:string;
+        phone?:string;
+    }
+    const [list, setList] = React.useState<{id: string}[]>([]);
+    const [user, setUser] = useState({});
+    const colRef: CollectionReference<DocumentData> = collection(db, 'users'); 
+    const curentuser = auth.currentUser?.uid
 
+    useEffect(() => {
+        const getUser = async () => {
+            const data = await getDocs(colRef);
+            setList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        }
+        getUser();
+        
+    },[]);
+    let userInfo: any;
+    userInfo = list.find((data) => data.id.replace(' ', '') == curentuser);
+    if (userInfo) {
+    console.log(userInfo.name);
+    }
+    
   return (
     <div className="inforpage">
         <Menu/>
@@ -33,7 +48,7 @@ export const Inforpage = () => {
                 <div>
                     <Camera className="inforpage__user-camera"/>
                 </div>
-                <p>Phạm Lê Minh Duy</p>
+                <p>{userInfo && userInfo.name}</p>
             </div>
                 <div className="inforpage__user-infor-detail">
                     <div className="inforpage__user-infor-detail-row">
@@ -41,7 +56,7 @@ export const Inforpage = () => {
                             Tên người dùng
                             <div>
                                 <p>
-                                Lê Quỳnh
+                                {userInfo && userInfo.name}
                                 </p>
                             </div>
                        </div>
@@ -49,7 +64,7 @@ export const Inforpage = () => {
                             Tên đăng nhập
                             <div>
                                 <p>
-                                Qunhas
+                                {userInfo && userInfo.account}
                                 </p>
                             </div>
                        </div>
@@ -59,7 +74,7 @@ export const Inforpage = () => {
                             Số điện thoại
                             <div>
                                 <p>
-                                0111222333
+                                {userInfo && userInfo.phone}
                                 </p>
                             </div>
                        </div>
@@ -67,7 +82,7 @@ export const Inforpage = () => {
                             Mật khẩu
                             <div>
                                 <p>
-                                32121312
+                                {userInfo && userInfo.password}
                                 </p>
                             </div>
                        </div>
@@ -77,7 +92,7 @@ export const Inforpage = () => {
                             Email
                             <div>
                                 <p>
-                                {auth.currentUser?.email}
+                                {userInfo && userInfo.email}
                                 </p>
                             </div>
                        </div>
@@ -85,7 +100,7 @@ export const Inforpage = () => {
                             Vai trò
                             <div>
                                 <p>
-                                Kế toán
+                                {userInfo && userInfo.role}
                                 </p>
                             </div>
                        </div>

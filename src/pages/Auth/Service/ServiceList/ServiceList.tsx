@@ -1,6 +1,6 @@
 import Menu from "../../Menu/menu";
 import React from 'react'
-import { Table } from "./Component/Table";
+import { TableService } from "./Component/Table";
 import SearchBox from "./SearchBox/SearchBox";
 import './ServiceList.css'
 export const ServiceList = () => {
@@ -27,15 +27,15 @@ export const ServiceList = () => {
                 </div>
                 <div className="service__list-search-time-table">
                   <div className="service__list-search-time">
-                  <p>Chọn thời gian</p>
+                  <p style= {{transform:'translateX(-570px)'}} className="service__list-search-time-title">Chọn thời gian</p>
                     <div className="service__list-search-time-input">
                     
                       <SearchBox/>
 
                     </div>
                   </div>
-                  <div className="service__list-table">
-                    <Table/>
+                  <div className="service__list-table ">
+                    <TableService/>
                   </div>
                 </div>
                 
@@ -62,7 +62,10 @@ export const ServiceList = () => {
           </div>
           <div className="service__list-add">
             <span>
+              <a href="/addservice">
               <i className="fa-solid fa-square-plus"></i>
+              </a>
+              
               <p>Thêm dịch vụ</p>
             </span>
               

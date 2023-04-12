@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
+import { getAuth,connectAuthEmulator,
+  sendPasswordResetEmail,
+  confirmPasswordReset } from "firebase/auth";
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,3 +26,15 @@ export const db = getFirestore(initializeApp(firebaseConfig));
 // Get a list of cities from your database
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(initializeApp(firebaseConfig));
+
+export const passwordReset = async (email: string) => {
+  return await sendPasswordResetEmail(auth, email)
+}
+
+export const confirmThePasswordReset = async (
+  oobCode:string, newPassword:string
+) => {
+  if(!oobCode && !newPassword) return;
+  
+  return await confirmPasswordReset(auth, oobCode, newPassword)
+}

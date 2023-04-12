@@ -2,6 +2,7 @@ import React from 'react'
 import { Table } from './Component/Table'
 import Menu from '../../../Menu/menu'
 import './AccountList.css'
+import { Link } from 'react-router-dom'
 export const AccountList = () => {
   return (
     <div className="account__list-page">
@@ -42,18 +43,25 @@ export const AccountList = () => {
               <div className="account__list-table-page-number-arrow"><i className="fa-solid fa-caret-right"></i></div>
             </div>
           </div>
-          <div className="account__list-search-keyword">
+          <div style={{transform:"translateX(0%)"}}className="account__list-search-keyword">
             <p>Từ khóa</p>
-            <div className="account__list-search-keyword-input">
+            <div  className="account__list-search-keyword-input">
               <input type="text" placeholder="Nhập từ khóa"/>
-              <i className="fa-solid fa-magnifying-glass"></i>
+              <i style={{position: 'absolute',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              right: '15px',
+              color: 'var(--text-primary-color)'}} className="fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
         </div>
       </div>
       <div className="account__list-add">
         <span>
+          <Link to='/accountsetting'>
           <i className="fa-solid fa-square-plus"></i>
+          </Link>
+          
           <p>Thêm tài khoản</p>
         </span>
           

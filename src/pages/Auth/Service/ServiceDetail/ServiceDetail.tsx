@@ -93,12 +93,12 @@ export const ServiceDetail = () => {
 
                     </div>
                   </div>
-                  <div className="service__list-table">
+                  <div className="service__list-table-detail">
                     <Table/>
                   </div>
                 </div>
                 
-                <div className="service__list-table-page-number">
+                <div className="service__list-table-page-number-detail">
                   <div className="service__list-table-page-number-arrow"><i className="fa-solid fa-caret-left"></i></div>
                   <div className="service__list-table-page-number-element">1</div>
                   <div className="service__list-table-page-number-element">2</div>
