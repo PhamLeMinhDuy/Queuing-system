@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CalendarComponent from '../Calendar/Calendar';
 import logout_icon from './icons/log-out.png'
 import dashboard_icon from './icons/dashboard.png'
@@ -9,12 +9,53 @@ import service_icon from './icons/service.png'
 import setting_icon from './icons/setting.png'
 import treedot_icon from './icons/treedot.png'
 import logo from '../../logo/Logoalta.png'
-import { Monitor } from 'react-feather'
+import {Monitor } from 'react-feather'
+import { Link } from 'react-router-dom';
 import { Bell } from 'react-feather'
 import avatar_cat from './avatar/avatar_cat.jpg'
 import './DashBoardMenu.css'
+import { CollectionReference, DocumentData, collection, getDocs } from 'firebase/firestore';
+import { auth, db } from '../../../../firebase/config';
+import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 export const DashBoardMenu = () => 
 {
+    const [list, setList] = React.useState<{id: string}[]>([]);
+    const [user, setUser] = useState({});
+    const [avatarUrl, setAvatarUrl] = useState('');
+    const colRef: CollectionReference<DocumentData> = collection(db, 'users'); 
+    const curentuser = auth.currentUser?.uid
+
+    useEffect(() => {
+        const getUser = async () => {
+            const data = await getDocs(colRef);
+            setList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        }
+        getUser();
+        
+    },[]);
+    let userInfo: any;
+    userInfo = list.find((data) => data.id.replace(' ', '') == curentuser);
+    if (userInfo) {
+    console.log(userInfo.name);
+    }
+    const storage = getStorage();
+    const imgRef = ref(storage, `items/${curentuser}.jpg`);
+    useEffect(() => {getDownloadURL(imgRef)
+        .then((url) => {
+            setAvatarUrl(url);
+        })
+        .catch((error) => {
+            switch (error.code) {
+            case 'storage/object-not-found':
+                break;
+            case 'storage/unauthorized':
+                break;
+            case 'storage/canceled':
+                break;
+            case 'storage/unknown':
+                break;
+            }
+        });},[imgRef])
     return (
 
                 <div className="content-dashboard__header-dashboard">
@@ -23,10 +64,10 @@ export const DashBoardMenu = () =>
                                 <div className="content-dashboard__header-user-avatar-bell">
                                     <i className="fa-solid fa-bell"></i>
                                 </div>
-                                <img className='content-dashboard__header-user-avatar-img' src={avatar_cat} />
+                                <img className='content-dashboard__header-user-avatar-img' src={avatarUrl} />
                                 <ul>
                                     <li className='content-dashboard__header-user-avatar-infor--hello'>Xin chào</li>
-                                    <li className='content-dashboard__header-user-avatar-infor--name'>Phạm Lê Minh Duy</li>
+                                    <li className='content-dashboard__header-user-avatar-infor--name'><Link style={{textDecoration: 'none', color: 'black'}}to='/inforpage'>{userInfo && userInfo.name}</Link></li>
                                 </ul>
                             </div>
                             <div className="content-dashboard__header-user-overview">

@@ -1,5 +1,5 @@
 import Menu from "../Menu/menu";
-import { getDatabase, ref, child, get } from "firebase/database";
+import { getDatabase, child, get } from "firebase/database";
 import { collection, query, getDoc, getDocs, getFirestore, where, onSnapshot, QuerySnapshot, CollectionReference, DocumentData } from "firebase/firestore";
 
 import firebase from 'firebase/app';
@@ -9,6 +9,7 @@ import React, { useEffect, useState } from 'react'
 import avatar from "./avatar/avatar_cat.jpg"
 import './inforpage.css'
 import {Camera} from "react-feather"  
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 export const Inforpage = () => {
     interface UserInterface {
         id?: string;
@@ -21,6 +22,7 @@ export const Inforpage = () => {
     }
     const [list, setList] = React.useState<{id: string}[]>([]);
     const [user, setUser] = useState({});
+    const [avatarUrl, setAvatarUrl] = useState('');
     const colRef: CollectionReference<DocumentData> = collection(db, 'users'); 
     const curentuser = auth.currentUser?.uid
 
@@ -37,6 +39,24 @@ export const Inforpage = () => {
     if (userInfo) {
     console.log(userInfo.name);
     }
+    const storage = getStorage();
+    const imgRef = ref(storage, `items/${curentuser}.jpg`);
+    useEffect(() => {getDownloadURL(imgRef)
+        .then((url) => {
+            setAvatarUrl(url);
+        })
+        .catch((error) => {
+            switch (error.code) {
+            case 'storage/object-not-found':
+                break;
+            case 'storage/unauthorized':
+                break;
+            case 'storage/canceled':
+                break;
+            case 'storage/unknown':
+                break;
+            }
+        });},[imgRef])
     
   return (
     <div className="inforpage">
@@ -44,7 +64,7 @@ export const Inforpage = () => {
         
         <div className="inforpage__user">
             <div className="inforpage__user-avatar">
-                <img src={avatar}/>
+                <img src={avatarUrl}/>
                 <div>
                     <Camera className="inforpage__user-camera"/>
                 </div>

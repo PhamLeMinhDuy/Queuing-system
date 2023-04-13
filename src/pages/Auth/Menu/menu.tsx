@@ -145,7 +145,7 @@ export const Menu = () => {
                     </div>
                     <div className="content__header-user-avatar-infor">
                         <li className='content__header-user-avatar-infor--hello'>Xin chào</li>
-                        <li className='content__header-user-avatar-infor--name'>{userInfo && userInfo.name}</li>
+                        <li className='content__header-user-avatar-infor--name'><Link style={{textDecoration: 'none', color: 'black'}}to='/inforpage'>{userInfo && userInfo.name}</Link></li>
                     </div>
                 </div>
             </div>

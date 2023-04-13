@@ -265,3 +265,7 @@
 .menu__item-setting-list-item:hover span {
     color: #fff;
 }
+
+.content__header-user-avatar-infor--name {
+    text-decoration: none;
+}
