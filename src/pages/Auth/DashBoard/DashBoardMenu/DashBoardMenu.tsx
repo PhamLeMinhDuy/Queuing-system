@@ -16,125 +16,118 @@ import './DashBoardMenu.css'
 export const DashBoardMenu = () => 
 {
     return (
-        <div className="menu__page">
-            <div className="content">
-                <div className="content__header-dashboard">
-                    <div className="content__header-title">
-                        Thông tin cá nhân
-                    </div>
-                    <div className="content__header-user-dashboard">
-                            <div className="content__header-user-avatar">
-                                <div className="content__header-user-avatar-bell">
+
+                <div className="content-dashboard__header-dashboard">
+                    <div className="content-dashboard__header-user-dashboard">
+                            <div className="content-dashboard__header-user-avatar">
+                                <div className="content-dashboard__header-user-avatar-bell">
                                     <i className="fa-solid fa-bell"></i>
                                 </div>
-                                <img className='content__header-user-avatar-img' src={avatar_cat} />
+                                <img className='content-dashboard__header-user-avatar-img' src={avatar_cat} />
                                 <ul>
-                                    <li className='content__header-user-avatar-infor--hello'>Xin chào</li>
-                                    <li className='content__header-user-avatar-infor--name'>Phạm Lê Minh Duy</li>
+                                    <li className='content-dashboard__header-user-avatar-infor--hello'>Xin chào</li>
+                                    <li className='content-dashboard__header-user-avatar-infor--name'>Phạm Lê Minh Duy</li>
                                 </ul>
                             </div>
-                            <div className="content__header-user-overview">
-                                <p className='content__header-user-overview-title'>Tổng quan</p>
-                                <div className="content__header-user-overview-statistical">
-                                    <div className="content__header-user-overview-statistical-multiple">
-                                        <div className="content__header-user-overview-statistical-percent">
-                                            <div className="content__header-user-overview-statistical-percent--outer">
-                                                <div className="content__header-user-overview-statistical-percent--inner">
-                                                    <span className='content__header-user-overview-statistical-percent-value'>90%</span>
+                            <div className="content-dashboard__header-user-overview">
+                                <p className='content-dashboard__header-user-overview-title'>Tổng quan</p>
+                                <div className="content-dashboard__header-user-overview-statistical">
+                                    <div className="content-dashboard__header-user-overview-statistical-multiple">
+                                        <div className="content-dashboard__header-user-overview-statistical-percent">
+                                            <div className="content-dashboard__header-user-overview-statistical-percent--outer">
+                                                <div className="content-dashboard__header-user-overview-statistical-percent--inner">
+                                                    <span className='content-dashboard__header-user-overview-statistical-percent-value'>90%</span>
                                                 </div>
                                             </div>        
                                         </div>
-                                        <div className="content__header-user-overview-statistical-data">
+                                        <div className="content-dashboard__header-user-overview-statistical-data">
                                             <p>4.221</p>
-                                            <p className="content__header-user-overview-statistical-data-device">
+                                            <p className="content-dashboard__header-user-overview-statistical-data-device">
                                             <Monitor className='icon'/>
                                             Thiết bị</p>
                                         </div>              
                                     </div>
-                                    <div className="content__header-user-overview-statistical-multiple content__header-user-overview-statistical-multiple-state">
-                                        <div className="content__header-user-overview-statistical-state">
+                                    <div className="content-dashboard__header-user-overview-statistical-multiple content-dashboard__header-user-overview-statistical-multiple-state">
+                                        <div className="content-dashboard__header-user-overview-statistical-state">
                                             <p className='dot-yellow'>Đang hoạt động</p>
                                             <p className='dot-purple'>Ngưng hoạt động</p>
                                         </div>
-                                        <div className="content__header-user-overview-statistical-state-data content__header-user-overview-statistical-device-state-data">
+                                        <div className="content-dashboard__header-user-overview-statistical-state-data content-dashboard__header-user-overview-statistical-device-state-data">
                                             <p>3.799</p>
                                             <p>422</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="content__header-user-overview-statistical">
-                                    <div className="content__header-user-overview-statistical-multiple">
-                                        <div className="content__header-user-overview-statistical-percent content__header-user-overview-statistical-percent-service">
-                                            <div className="content__header-user-overview-statistical-percent--outer content__header-user-overview-statistical-percent--outer-service">
-                                                <div className="content__header-user-overview-statistical-percent--inner content__header-user-overview-statistical-percent--inner-service">
-                                                    <span className='content__header-user-overview-statistical-percent-value'>76%</span>
+                                <div className="content-dashboard__header-user-overview-statistical">
+                                    <div className="content-dashboard__header-user-overview-statistical-multiple">
+                                        <div className="content-dashboard__header-user-overview-statistical-percent content-dashboard__header-user-overview-statistical-percent-service">
+                                            <div className="content-dashboard__header-user-overview-statistical-percent--outer content-dashboard__header-user-overview-statistical-percent--outer-service">
+                                                <div className="content-dashboard__header-user-overview-statistical-percent--inner content-dashboard__header-user-overview-statistical-percent--inner-service">
+                                                    <span className='content-dashboard__header-user-overview-statistical-percent-value'>76%</span>
                                                 </div>
                                             </div> 
                                         </div>
-                                        <div className="content__header-user-overview-statistical-data">
+                                        <div className="content-dashboard__header-user-overview-statistical-data">
                                             <p>276</p>
-                                            <p className="content__header-user-overview-statistical-data-service">
+                                            <p className="content-dashboard__header-user-overview-statistical-data-service">
                                                 <img className='icon' src={service_icon} />
                                                 Dịch vụ
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="content__header-user-overview-statistical-multiple content__header-user-overview-statistical-multiple-state">
-                                        <div className="content__header-user-overview-statistical-state">
+                                    <div className="content-dashboard__header-user-overview-statistical-multiple content-dashboard__header-user-overview-statistical-multiple-state">
+                                        <div className="content-dashboard__header-user-overview-statistical-state">
                                             <p className='dot-blue'>Đang hoạt động</p>
                                             <p className='dot-purple'>Ngưng hoạt động</p>
                                         </div>
-                                        <div className="content__header-user-overview-statistical-state-data content__header-user-overview-statistical-service-state-data">
+                                        <div className="content-dashboard__header-user-overview-statistical-state-data content-dashboard__header-user-overview-statistical-service-state-data">
                                             <p>210</p>
                                             <p>66</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="content__header-user-overview-statistical">
-                                    <div className="content__header-user-overview-statistical-multiple">
-                                        <div className="content__header-user-overview-statistical-percent content__header-user-overview-statistical-percent-number">
-                                            <div className="content__header-user-overview-statistical-percent--outer content__header-user-overview-statistical-percent--outer-number">
-                                                <div className="content__header-user-overview-statistical-percent--inner content__header-user-overview-statistical-percent--inner-number">
-                                                    <div className="content__header-user-overview-statistical-percent-inner content__header-user-overview-statistical-percent--first-inner-number">
-                                                        <div className="content__header-user-overview-statistical-percent-inner-number content__header-user-overview-statistical-percent--second-inner-number">
-                                                            <span className='content__header-user-overview-statistical-percent-value'>86%</span>
+                                <div className="content-dashboard__header-user-overview-statistical">
+                                    <div className="content-dashboard__header-user-overview-statistical-multiple">
+                                        <div className="content-dashboard__header-user-overview-statistical-percent content-dashboard__header-user-overview-statistical-percent-number">
+                                            <div className="content-dashboard__header-user-overview-statistical-percent--outer content-dashboard__header-user-overview-statistical-percent--outer-number">
+                                                <div className="content-dashboard__header-user-overview-statistical-percent--inner content-dashboard__header-user-overview-statistical-percent--inner-number">
+                                                    <div className="content-dashboard__header-user-overview-statistical-percent-inner content-dashboard__header-user-overview-statistical-percent--first-inner-number">
+                                                        <div className="content-dashboard__header-user-overview-statistical-percent-inner-number content-dashboard__header-user-overview-statistical-percent--second-inner-number">
+                                                            <span className='content-dashboard__header-user-overview-statistical-percent-value'>86%</span>
                                                             
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div> 
                                         </div>
-                                        <div className="content__header-user-overview-statistical-data">
+                                        <div className="content-dashboard__header-user-overview-statistical-data">
                                             <p>4.221</p>
-                                            <p className="content__header-user-overview-statistical-data-number">
+                                            <p className="content-dashboard__header-user-overview-statistical-data-number">
                                                 <img className='icon' src={number_icon} />
                                                 Cấp số
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="content__header-user-overview-statistical-multiple content__header-user-overview-statistical-multiple-state">
-                                        <div className="content__header-user-overview-statistical-state">
+                                    <div className="content-dashboard__header-user-overview-statistical-multiple content-dashboard__header-user-overview-statistical-multiple-state">
+                                        <div className="content-dashboard__header-user-overview-statistical-state">
                                             <p className='dot-green'>Đã sử dụng</p>
                                             <p className='dot-purple'>Đang chờ</p>
                                             <p className='dot-pink'>Bỏ qua</p>
                                         </div>
-                                        <div className="content__header-user-overview-statistical-state-data content__header-user-overview-statistical-number-state-data">
+                                        <div className="content-dashboard__header-user-overview-statistical-state-data content-dashboard__header-user-overview-statistical-number-state-data">
                                             <p>3.721</p>
                                             <p>486</p>
                                             <p>32</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="content__header-user-overview-calendar">
+                                <div className="content-dashboard__header-user-overview-calendar">
                                     <CalendarComponent/>
                                 </div>
                             </div>
                         
                     </div>
                 </div>
-            </div>
-    
-        </div>
     )
 }
 export default DashBoardMenu;

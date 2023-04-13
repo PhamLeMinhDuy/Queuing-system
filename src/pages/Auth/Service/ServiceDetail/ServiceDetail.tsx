@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Menu from '../../Menu/menu'
 import './ServiceDetail.css'
 import SearchBox from '../ServiceList/SearchBox/SearchBox'
 import { Table } from './Component/Table'
+import { CollectionReference, DocumentData, collection, getDocs } from 'firebase/firestore'
+import { Link } from 'react-router-dom'
+import { db } from '../../../../firebase/config'
+import { useParams } from 'react-router-dom'
 export const ServiceDetail = () => {
+  interface DeviceDetailParams {
+    id: string;
+  }
+  const [list, setList] = React.useState<{id: string}[]>([]);
+  const colRef: CollectionReference<DocumentData> = collection(db, 'servicelist'); 
+  const { id } = useParams<{ id: string }>();
+
+  useEffect(() => {
+      const getDevice = async () => {
+          const data = await getDocs(colRef);
+          setList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      }
+      getDevice();
+      
+  },[]);
+  let serviceInfo: any;
+  serviceInfo = list.find((data) => data.id.replace(' ', '') == id);
+  if (serviceInfo) {
+  console.log(serviceInfo.name);
+  }
   return (
     <div className="device__detail-page">
         <Menu/>
@@ -15,7 +39,7 @@ export const ServiceDetail = () => {
                     
                     Mã dịch vụ: 
                     <div className="device__detail-column-content">
-                    <p>201</p>                       
+                    <p>{serviceInfo && serviceInfo.serviceid}</p>                       
                     </div>
                 </div>
             </div>
@@ -23,7 +47,7 @@ export const ServiceDetail = () => {
                 <div className="device__detail-column">
                     Tên dịch vụ: 
                     <div className="device__detail-column-content">
-                    <p>Khám tim mạch</p>                       
+                    <p>{serviceInfo && serviceInfo.name}</p>                       
                     </div>
                 </div>
             </div>
@@ -31,7 +55,7 @@ export const ServiceDetail = () => {
                 <div className="device__detail-column">
                     Mô tả: 
                     <div className="device__detail-column-content">
-                    <p>Chuyên các bệnh lý về tim</p>                       
+                    <p>{serviceInfo && serviceInfo.description}</p>                       
                     </div>
                 </div>
             </div>
@@ -121,14 +145,20 @@ export const ServiceDetail = () => {
         </div>
         <div className="service__list-add">
             <span>
-            <i className="fa-sharp fa-solid fa-square-pen"></i>
-              <p>Cập nhật danh sách</p>
+            <Link to={`/updateservice/${id}`}><i className="fa-sharp fa-solid fa-square-pen"></i></Link>
+            
+              <p>
+                Cập nhật danh sách
+              </p>
             </span>
               
         </div>
         <div className="service__list-back">
             <span>
+            <Link to='/servicelist'>
             <i className="fa-sharp fa-solid fa-rotate-left"></i>
+            </Link>
+            
               <p>Quay lại</p>
             </span>
               

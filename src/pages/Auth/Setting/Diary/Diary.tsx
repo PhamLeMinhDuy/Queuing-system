@@ -35,10 +35,10 @@ export const Diary = () => {
                   <div className="diary__list-table-page-number-arrow"><i className="fa-solid fa-caret-right"></i></div>
                 </div>
               </div>
-              <div className="account__list-search-keyword">
+              <div className="diary__list-search-keyword">
                         <p>Từ khóa</p>
-                        <div className="account__list-search-keyword-input">
-                        <input type="text" placeholder="Nhập từ khóa" className='account__list-search-keyword-input-icon'></input>
+                        <div className="diary__list-search-keyword-input">
+                        <input type="text" placeholder="Nhập từ khóa" className='diary__list-search-keyword-input-icon'></input>
                         <i className="fa-solid fa-magnifying-glass"></i>
                         </div>
             </div>

@@ -18,7 +18,7 @@ export const TableCreate = ({columns, data}: any) => {
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              <th className='th-providenumber-table' {...column.getHeaderProps()}>{column.render('Header')}</th>
             ))}
           </tr>
         ))}

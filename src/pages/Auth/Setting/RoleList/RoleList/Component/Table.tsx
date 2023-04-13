@@ -2,80 +2,59 @@ import React, { useEffect } from 'react'
 import { TableCreate } from './TableCreate';
 import { useState } from 'react';
 import { CollectionReference, DocumentData, collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../../../firebase/config';
+import { db } from '../../../../../../firebase/config';
 
-export const TableService = () => {
+export const TableRole = () => {
     const [list, setList] = React.useState<Record<string, any>>({});
       
-    interface ServiceInterface {
+    interface RoleInterface {
       id?: string;
-      serviceid?:string;
-      name?:string;
-      state?:string;
       description?:string;
+      numberuser?:string;
+      role?:string;
   }
-  type DeviceWithId = {
+  type RoleWithId = {
     id: string;
-  } & ServiceInterface & {
-    detail: JSX.Element;
+  } & RoleInterface & {
     update: JSX.Element;
   };
-  const colRef: CollectionReference<DocumentData> = collection(db, 'servicelist'); 
+  const colRef: CollectionReference<DocumentData> = collection(db, 'rolelist'); 
   useEffect(() => {
     const getDevices = async () => {
       const querySnapshot = await getDocs(colRef);
-      const devices: Record<string, ServiceInterface> = {};
+      const devices: Record<string, RoleInterface> = {};
       querySnapshot.forEach((doc) => {
-        devices[doc.id] = doc.data() as ServiceInterface;
+        devices[doc.id] = doc.data() as RoleInterface;
       });
       setList(devices);
     };
     getDevices();
   }, []);
 
-  const data: DeviceWithId[] = Object.keys(list).map((serviceId) => ({
-    id: serviceId,
-    serviceId: list[serviceId].serviceid,
-    serviceName: list[serviceId].name,
-    serviceState: list[serviceId].state,
-    serviceDes: list[serviceId].description,
-    detail: <a href={`/servicedetail/${serviceId}`}>Chi tiết</a>,
-    update: <a href={`/updateservice/${serviceId}`}>Cập nhật</a>,
+  const data: RoleWithId[] = Object.keys(list).map((roleId) => ({
+    id: roleId,
+    role: list[roleId].role,
+    numberuser: list[roleId].numberuser,
+    description: list[roleId].description,
+    update: <a href={`/updaterolelist/${roleId}`}>Cập nhật</a>,
   }));
 
     interface Column {
         Header: string;
         accessor: string;
     }
-    interface Data {
-        id: string;
-        serviceId: string;
-        serviceName: string;
-        serviceDes: string;
-        serviceState: string;
-        detail: JSX.Element;
-        update: JSX.Element;
-    }
     const columns: Column[] = [
         {
-            Header: 'Mã dịch vụ',
-            accessor: 'serviceId',
+            Header: 'Tên vai tró',
+            accessor: 'role',
         },
         {
-            Header: 'Tên dịch vụ',
-            accessor: 'serviceName',
+            Header: 'Số người dùng',
+            accessor: 'numberuser',
         },
         {
-            Header: 'Mô tả dịch vụ',
-            accessor: 'serviceDes',
-        },
-        {
-            Header: 'Trạng thái hoạt động',
-            accessor: 'serviceState',
-        },
-        {
-            Header: '',
-            accessor: 'detail',
+            Header: 'Mô tả ',
+            accessor: 'description',
         },
         {
             Header: '',

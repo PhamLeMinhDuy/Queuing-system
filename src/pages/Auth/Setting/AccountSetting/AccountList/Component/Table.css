@@ -40,32 +40,32 @@ th {
     font-weight: bold;
 }
   
-th:first-child {
+th.th-account-table:first-child {
     width: 150px;
 }
   
-th:nth-child(2) {
+.th-account-table:nth-child(2) {
     width: 166px;
 }
   
-th:nth-child(3) {
+.th-account-table:nth-child(3) {
     width: 130px;
 }
   
-th:nth-child(4) {
+.th-account-table:nth-child(4) {
     width: 255px;
 }
   
   
-th:nth-child(5){
-    width: 114px;
+.th-account-table:nth-child(5){
+    width: 110px;
 }
 
-th:nth-child(6) {
+.th-account-table:nth-child(6) {
     width: 193px;
 }
   
-th:nth-child(7) {
+.th-account-table:nth-child(7) {
     width: 99px;
 }
 

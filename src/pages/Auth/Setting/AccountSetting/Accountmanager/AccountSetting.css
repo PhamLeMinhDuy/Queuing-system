@@ -217,3 +217,27 @@
     width: 18px;
     
 }
+
+.eye-reset-account-password,
+.eye-off-reset-account-password{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translate(125%, -50%);
+    cursor: pointer;
+}
+
+.error {
+    border-color: red;
+}
+  
+.error + .error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.eye-reset-account-password-trans,
+.eye-off-reset-account-password-trans {
+    top: 50%;
+    transform: translate(120%,-50%);
+}

@@ -10,9 +10,6 @@ export const DashboardPage = () => {
   return (
     <div className='dashboard__page'>
       <Menu/>
-      <div className="dashboard__page menu">
-      <DashBoardMenu/> 
-      </div>
         <div className="dashboard__list-page-sub-header">
               <h1>Quản lý dịch vụ</h1>
               <div className="dashboard__list-page-sub-data-card">
@@ -86,6 +83,9 @@ export const DashboardPage = () => {
                   <Areachart/>
               </div>
               
+        </div>
+        <div className="dashboard__state">
+          <DashBoardMenu/>
         </div>
     </div>
   )

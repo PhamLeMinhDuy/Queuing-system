@@ -99,6 +99,9 @@ listItems.forEach((item) => {
     navigate('/devicelist')
     console.log(deviceRef)
   };
+  const handleCancel = () => {
+    navigate(`/devicedetail/${deviceInfo.id}`)
+  }
 
   return (
     <div className='device__update'>
@@ -185,7 +188,7 @@ listItems.forEach((item) => {
             </div>
           </div>
           <div className="device__update-btn">
-            <input type="submit" className='device__update-btn--cancel btn' value='Hủy bỏ' />
+            <input type="submit" className='device__update-btn--cancel btn' value='Hủy bỏ' onClick={handleCancel}/>
             <input type="submit" className='device__update-btn--submit btn primary-btn' value='Cập nhật' onClick={handleUpdateDevice} />
           </div>
         </div>

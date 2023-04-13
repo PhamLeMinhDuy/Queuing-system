@@ -217,3 +217,33 @@
     width: 18px;
     
 }
+.eye-update-account-password,
+.eye-off-update-account-password{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translate(125%, -50%);
+    cursor: pointer;
+}
+
+.error {
+    border-color: red;
+}
+  
+.error + .error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.eye-update-account-password-trans,
+.eye-off-update-account-password-trans {
+    top: 50%;
+    transform: translate(120%,-50%);
+}
+
+.eye-with-error,
+.eye-off-with-error {
+    margin-right: 5px;
+    top: 15%;
+    
+}

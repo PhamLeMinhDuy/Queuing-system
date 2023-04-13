@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTable } from 'react-table';
-import './Table.css'
+import './TableRole.css'
 export const TableCreate = ({columns, data}: any) => {
     const {
         getTableProps,
@@ -18,7 +18,7 @@ export const TableCreate = ({columns, data}: any) => {
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th className='th-report-table'{...column.getHeaderProps()}>{column.render('Header')}</th>
+              <th className='th-role-table'{...column.getHeaderProps()}>{column.render('Header')}</th>
             ))}
           </tr>
         ))}
@@ -31,14 +31,10 @@ export const TableCreate = ({columns, data}: any) => {
               {row.cells.map(cell => (
                 <td {...cell.getCellProps()} 
                     className={
-                    cell.column.id === "state"
-                      ? cell.value === "Đang chờ"
+                    cell.column.id === "serviceState"
+                      ? cell.value === "Hoạt động"
                         ? "dot-green"
-                        : cell.column.id === "state"
-                          ? cell.value === "Bỏ qua"
-                            ? "dot-red"
-                            : "dot-purple"
-                            : ""
+                        : "dot-red"
                       : ""
                   }>{cell.render('Cell')}</td>
               ))}

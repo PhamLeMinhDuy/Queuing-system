@@ -66,7 +66,16 @@ export const DeviceDetail = () => {
                 Dịch vụ sử dụng:
             </div>
             <div className="device__detail-row device__detail-row-service-detail">{deviceInfo && deviceInfo.service}</div>
-
+            
+        </div>
+        <div className="device__list-update">
+                <span>
+                <a href={`/deviceupdate/${id}`}>
+                <i className="fa-sharp fa-solid fa-pen-to-square"></i>
+                </a>
+                <p>Cập nhật thiết bị</p>
+                </span>
+          
         </div>
     </div>
   )

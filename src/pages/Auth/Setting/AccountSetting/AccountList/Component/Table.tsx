@@ -1,21 +1,52 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { TableCreate } from './TableCreate';
 import { useState } from 'react';
+import { CollectionReference, DocumentData, collection, getDocs } from 'firebase/firestore';
+import { db } from '../../../../../../firebase/config';
 
 export const Table = () => {
+    const [list, setList] = React.useState<Record<string, any>>({});
+      
+    interface AccountInterface {
+      id?: string;
+      account?:string;
+      email?:string;
+      name?:string;
+      phone?:string;
+      role?:string;
+      state?:string;
+    }
+    type AccountWithId = {
+        id: string;
+    } & AccountInterface & {
+        update: JSX.Element;
+    };
+    const colRef: CollectionReference<DocumentData> = collection(db, 'accountlist'); 
+    useEffect(() => {
+        const getDevices = async () => {
+        const querySnapshot = await getDocs(colRef);
+        const devices: Record<string, AccountInterface> = {};
+        querySnapshot.forEach((doc) => {
+            devices[doc.id] = doc.data() as AccountInterface;
+        });
+        setList(devices);
+        };
+        getDevices();
+    }, []);
+
+    const data: AccountWithId[] = Object.keys(list).map((accountId) => ({
+        id: accountId,
+        userName: list[accountId].account,
+        name: list[accountId].name,
+        phone: list[accountId].phone,
+        email: list[accountId].email,
+        state: list[accountId].state,
+        role: list[accountId].role,
+        update: <a href={`/updateaccount/${accountId}`}>Cập nhật</a>,
+    }));
     interface Column {
         Header: string;
         accessor: string;
-    }
-    interface Data {
-        id: string;
-        userName: string;
-        name: string;
-        phone: string;
-        email: string;
-        role: string;
-        state: string;
-        update: string;
     }
     const columns: Column[] = [
         {
@@ -47,91 +78,6 @@ export const Table = () => {
             accessor: 'update',
         },
     ];
-    const data = [
-        {
-            id: '1',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },
-        {
-            id: '2',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },{
-            id: '3',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Ngưng hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },{
-            id: '4',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },{
-            id: '5',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Ngưng hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },{
-            id: '6',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },{
-            id: '7',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },{
-            id: '8',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Ngưng hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },{
-            id: '9',
-            userName: 'tuyetnguyen@12',
-            name: 'Nguyen Văn A',
-            phone: '0919256712',
-            email: 'tuyetnguyen12@gmail.com',
-            role: 'Kế toán',
-            state: 'Hoạt động',
-            update:<a href="/updateaccount">Cập nhật</a>
-        },
-    ]
   return (
     <TableCreate columns={columns} data={data} />
   )

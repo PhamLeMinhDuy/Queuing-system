@@ -30,6 +30,7 @@ import { UpdateAccount } from './pages/Auth/Setting/AccountSetting/UpdateAccount
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { Diary } from './pages/Auth/Setting/Diary/Diary';
+import { RoleListTable } from './pages/Auth/Setting/RoleList/RoleList/RoleList';
 
 function App() {
 
@@ -38,25 +39,28 @@ function App() {
         <Routes>
           <Route path='/' element={<Login/>}></Route>
           <Route path='/inforpage' element={<Inforpage/>}></Route>
+          <Route path='/dashboardpage' element={<DashboardPage/>}></Route>
           <Route path='/servicelist' element={<ServiceList/>}></Route>
           <Route path='/addservice' element={<AddService/>}></Route>
-          <Route path='/servicedetail' element={<ServiceDetail/>}></Route>
-          <Route path='/updateservice' element={<UpdateService/>}></Route>
+          <Route path='/servicedetail/:id' element={<ServiceDetail/>}></Route>
+          <Route path='/updateservice/:id' element={<UpdateService/>}></Route>
           <Route path='/devicelist' element={<DeviceList/>}></Route>
           <Route path='/devicemanagerment' element={<DeviceManagerment/>}></Route>
           <Route path='/devicedetail/:id' element={<DeviceDetail/>}></Route>
           <Route path='/deviceupdate/:id' element={<DeviceUpdate/>}></Route>
           <Route path='/providenumberlist' element={<ProvideNumberList/>}></Route>
-          <Route path='/providenumberdetail' element={<ProvideNumberDetail/>}></Route>
+          <Route path='/providenumberdetail/:id' element={<ProvideNumberDetail/>}></Route>
           <Route path='/providenumber' element={<ProvideNumber/>}></Route>
           <Route path='/report' element={<Report/>}></Route>
-          <Route path='/rolelist' element={<RoleList/>}></Route>
+          <Route path='/rolelistadd' element={<RoleList/>}></Route>
           <Route path='/accountlist' element={<AccountList/>}></Route>
           <Route path='/accountsetting' element={<AccountSetting/>}></Route>
-          <Route path='/updateaccount' element={<UpdateAccount/>}></Route>
+          <Route path='/updateaccount/:id' element={<UpdateAccount/>}></Route>
           <Route path='/diary' element={<Diary/>}></Route>
           <Route path='/forget' element={<Forget/>}></Route>
           <Route path='/resetpass' element={<ResetPass/>}></Route>
+          <Route path='/rolelisttable' element={<RoleListTable/>}></Route>
+          <Route path='/updaterolelist/:id' element={<UpdateRoleList/>}></Route>
         </Routes>
   )
 

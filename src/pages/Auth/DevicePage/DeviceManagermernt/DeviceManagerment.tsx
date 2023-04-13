@@ -4,7 +4,7 @@ import Menu from '../../Menu/menu'
 import './devicemanagerment.css'
 import { CollectionReference, DocumentData, addDoc, collection, doc, getDocs, updateDoc } from 'firebase/firestore';
 import { db } from '../../../../firebase/config';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 export const DeviceManagerment = () => {
   const listItems = document.querySelectorAll('.device__managermaent-infor-column-list-item-add');
   const inputField = document.querySelector('.device__managermaent-infor-column-input-add p') as HTMLElement;
@@ -100,7 +100,9 @@ listItems.forEach((item) => {
     navigate('/devicelist')
     console.log(deviceRef)
   };
-
+const handleCancel = () => {
+  navigate('/devicelist')
+}
   return (
     <div className='device__managerment'>
         <Menu/>
@@ -186,7 +188,7 @@ listItems.forEach((item) => {
             </div>
           </div>
           <div className="device__managerment-btn">
-            <input type="submit" className='device__managerment-btn--cancel btn' value='Hủy bỏ' />
+            <input type="submit" className='device__managerment-btn--cancel btn' value='Hủy bỏ' onClick={handleCancel} />
             <input type="submit" className='device__managerment-btn--submit btn primary-btn' value='Thêm thiết bị' onClick={handleAddDevice} />
           </div>
         </div>

@@ -1,7 +1,12 @@
 import React from 'react'
 import Menu from '../../Menu/menu'
 import './ProvideNumber.css'
+import { useNavigate } from 'react-router-dom'
 export const ProvideNumber = () => {
+    const navigate = useNavigate();
+    const handleCancel = () => {
+        navigate('/providenumberlist')
+      }
   return (
     <div className='provide__number-page'>
         <Menu/>
@@ -26,7 +31,7 @@ export const ProvideNumber = () => {
                 </div>
             </div>
             <div className="provide__number-btn">
-                <input type="submit" className='btn' value="Hủy bỏ" />
+                <input type="submit" className='btn' value="Hủy bỏ" onClick={handleCancel}/>
                 <input type="submit" className='btn primary-btn' value="In số" />
             </div>
         </div>

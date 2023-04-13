@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Menu from '../../Menu/menu'
 import './ProvideNumberDetail.css'
+import { CollectionReference, DocumentData, collection, getDocs } from 'firebase/firestore';
+import { useParams } from 'react-router-dom';
+import { db } from '../../../../firebase/config';
+import { Link } from 'react-router-dom';
 export const ProvideNumberDetail = () => {
+    const [list, setList] = React.useState<{id: string}[]>([]);
+    const colRef: CollectionReference<DocumentData> = collection(db, 'providenumberlist'); 
+    const { id } = useParams<{ id: string }>();
+
+    useEffect(() => {
+        const getDevice = async () => {
+            const data = await getDocs(colRef);
+            setList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        }
+        getDevice();
+        
+    },[]);
+    let providenumberInfo: any;
+    providenumberInfo = list.find((data) => data.id.replace(' ', '') == id);
+    if (providenumberInfo) {
+    console.log(providenumberInfo);
+    }
   return (
     <div className='provide__number-detail-page'>
         <Menu/>
@@ -12,13 +33,13 @@ export const ProvideNumberDetail = () => {
                 <div className="provide__number-detail-column">
                     Họ và tên: 
                     <div className="provide__number-detail-column-content">
-                        <p>Phạm Lê Minh Duy</p>
+                        <p>{providenumberInfo && providenumberInfo.customer}</p>
                     </div>
                 </div>
                 <div className="provide__number-detail-column">
                     Nguồn cấp:
                     <div className="provide__number-detail-column-content">
-                        <p>Kiosk</p>
+                        <p>{providenumberInfo && providenumberInfo.source}</p>
                     </div> 
                 </div>
             </div>
@@ -26,14 +47,14 @@ export const ProvideNumberDetail = () => {
                 <div className="provide__number-detail-column">
                     Tên dịch vụ:
                     <div className="provide__number-detail-column-content">
-                        <p>Khám tim mạch</p>
+                        <p>{providenumberInfo && providenumberInfo.service}</p>
                     </div>
                 </div>
                 <div className="provide__number-detail-column">
                     Trạng thái: 
                     <div className="provide__number-detail-column-content provide__number-detail-column-state">
-                        <span></span>
-                        <p>Đang chờ</p>
+                        <span className={`${providenumberInfo && providenumberInfo.state === 'Bỏ qua' ? 'red' : providenumberInfo && providenumberInfo.state === 'Đang chờ' ? 'blue' : 'gray'}`}></span>
+                        <p>{providenumberInfo && providenumberInfo.state}</p>
                     </div>
                     
                 </div>
@@ -42,13 +63,13 @@ export const ProvideNumberDetail = () => {
                 <div className="provide__number-detail-column">
                     Số thứ tự: 
                     <div className="provide__number-detail-column-content">
-                        <p>2001201</p>
+                        <p>{providenumberInfo && providenumberInfo.number}</p>
                     </div>
                 </div>
                 <div className="provide__number-detail-column">
                     Số điện thoại: 
                     <div className="provide__number-detail-column-content">
-                        <p>0833299959</p>
+                        <p>{providenumberInfo && providenumberInfo.phone}</p>
                     </div>
                 </div>
             </div>
@@ -56,13 +77,13 @@ export const ProvideNumberDetail = () => {
                 <div className="provide__number-detail-column">
                     Thời gian cấp: 
                     <div className="provide__number-detail-column-content">
-                        <p>14:35 - 07/11/2021</p>
+                        <p>{providenumberInfo && providenumberInfo.time}</p>
                     </div>
                 </div>
                 <div className="provide__number-detail-column">
                     Địa chỉ Email: 
                     <div className="provide__number-detail-column-content">
-                        <p>duy.207CT68618@vanlanguni.vn</p>
+                        <p>{providenumberInfo && providenumberInfo.email}</p>
                     </div>
                 </div>
             </div>
@@ -70,13 +91,22 @@ export const ProvideNumberDetail = () => {
                 <div className="provide__number-detail-column">
                     Hạn sử dụng: 
                     <div className="provide__number-detail-column-content">
-                        <p>18:00 - 07/11/2021</p>
+                        <p>{providenumberInfo && providenumberInfo.expiry}</p>
                     </div>
                 </div>
                 <div className="provide__number-detail-column">
                     
                 </div>
             </div>
+        </div>
+        <div className="provide__number__list-back">
+                <span>
+                <Link to='/providenumberlist'>
+                <i className="fa-sharp fa-solid fa-rotate-left"></i>
+                </Link>
+                <p>Quay lại</p>
+                </span>
+          
         </div>
     </div>
   )

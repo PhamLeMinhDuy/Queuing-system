@@ -15,7 +15,10 @@ import { Bell } from 'react-feather'
 import avatar_cat from './avatar/avatar_cat.jpg'
 import './menu.css'
 import { Link, useNavigate } from 'react-router-dom'
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 export const Menu = () => {
+    
+
     interface UserInterface {
         id?: string;
         name?:string;
@@ -26,7 +29,7 @@ export const Menu = () => {
         phone?:string;
     }
     const [list, setList] = React.useState<{id: string}[]>([]);
-    const [user, setUser] = useState({});
+    const [avatarUrl, setAvatarUrl] = useState('');
     const colRef: CollectionReference<DocumentData> = collection(db, 'users'); 
     const curentuser = auth.currentUser?.uid
 
@@ -45,6 +48,25 @@ export const Menu = () => {
     }
     
     const navigate = useNavigate();
+    const storage = getStorage();
+    const imgRef = ref(storage, `items/${curentuser}.jpg`);
+    useEffect(() => {getDownloadURL(imgRef)
+        .then((url) => {
+            setAvatarUrl(url);
+        })
+        .catch((error) => {
+            switch (error.code) {
+            case 'storage/object-not-found':
+                break;
+            case 'storage/unauthorized':
+                break;
+            case 'storage/canceled':
+                break;
+            case 'storage/unknown':
+                break;
+            }
+        });},[imgRef])
+    
   return (
     <div className="menu__page">
         <div className="page">
@@ -90,9 +112,9 @@ export const Menu = () => {
                             <img className='icon icon_treedot' src={treedot_icon} />
                         <div className="menu__item-setting">
                             <ul className='menu__item-setting-list'>
-                                <li style={{color: "#7E7D88"}} className='menu__item-setting-list-item'><Link to='/rolelist'><span>Quản lý vai trò</span></Link></li>
+                                <li style={{color: "#7E7D88"}} className='menu__item-setting-list-item'><Link to='/rolelisttable'><span>Quản lý vai trò</span></Link></li>
                                 <li style={{color: "#7E7D88"}} className='menu__item-setting-list-item'><Link to='/accountlist'><span>Quản lý tài khoản</span></Link></li>
-                                <li style={{color: "#7E7D88"}} className='menu__item-setting-list-item'><Link to='/diary'><span>Quản lý tài khoản</span></Link></li>
+                                <li style={{color: "#7E7D88"}} className='menu__item-setting-list-item'><Link to='/diary'><span>Nhật ký người dùng</span></Link></li>
                             </ul>
 
                         </div>
@@ -119,7 +141,7 @@ export const Menu = () => {
                         <div className="content__header-user-avatar-bell">
                             <i className="fa-solid fa-bell"></i>
                         </div>
-                        <img className='content__header-user-avatar-img' src={avatar_cat} />
+                        <img className='content__header-user-avatar-img' src={avatarUrl} />
                     </div>
                     <div className="content__header-user-avatar-infor">
                         <li className='content__header-user-avatar-infor--hello'>Xin chào</li>

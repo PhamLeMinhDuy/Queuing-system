@@ -77,3 +77,47 @@
     text-align: left;
     word-wrap: break-word;
 }
+
+.provide__number-detail-column-state .red {
+    background-color: #EC3740;
+}
+
+.provide__number-detail-column-state .blue {
+    background-color: #4277FF;
+}
+
+.provide__number-detail-column-state .gray {
+    background-color: #7E7D88;
+}
+.provide__number__list-back {
+    position: absolute;
+    transform:translateY( 160px); 
+    background: #FFF2E7;
+    margin-top: 10px;
+    right: 0;
+    width: 80px;
+    height: 94px;
+    text-align: center;
+}
+
+.provide__number__list-back span{
+    position: absolute;
+    display: block;
+    margin-top: 12px;
+}
+
+.provide__number__list-back p {
+    width: 72px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    height: 38px;
+    color: var(--text-primary-color);
+    margin: 4px 4px 12px 4px;
+}
+
+.provide__number__list-back i {
+    color: var(--text-primary-color);
+    font-size: 28px;
+    cursor: pointer;
+}

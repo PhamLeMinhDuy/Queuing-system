@@ -50,25 +50,25 @@ th {
     font-weight: bold;
 }
   
-th:first-child {
+th.th-report-table:first-child {
     width: 150px;
 }
   
-th:nth-child(2) {
+.th-report-table:nth-child(2) {
     width: 224px;
 }
   
-th:nth-child(3) {
+.th-report-table:nth-child(3) {
     width: 230px;
 }
   
-th:nth-child(4) {
+.th-report-table:nth-child(4) {
     width: 253px;
 }
   
   
-th:nth-child(5),
-th:nth-child(6) {
+.th-report-table:nth-child(5),
+.th-report-table:nth-child(6) {
     width: 125px;
 }
   

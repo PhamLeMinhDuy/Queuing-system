@@ -129,17 +129,17 @@
     top: -80%;
 }
 
-.account__list-search-keyword {
+.diary__list-search-keyword {
     transform: translateX(78%);
 }
 
-.account__list-search-keyword p
+.diary__list-search-keyword p
  {
     font-weight: 600;
     font-size: 16px;
 }
 
-.account__list-search-keyword input {
+.diary__list-search-keyword input {
     display: flex;
     width: 300px;
     height: 40px;
@@ -152,11 +152,11 @@
     margin-top: 10px;
 }
 
-.account__list-search-keyword input {
+.diary__list-search-keyword input {
     padding-left: 6px;
     position: relative;
 }
-.account__list-search-keyword i {
+.diary__list-search-keyword i {
     position: absolute;
     top: 70%;
     transform: translateY(-50%);

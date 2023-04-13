@@ -9,7 +9,7 @@ export const ProvideNumberList = () => {
         <div className="provide__list-page">
           <Menu/>
           <div className="provide__list-page-sub-header">
-            <h1>Quản lý dịch vụ</h1>
+            <h1>Quản lý cấp số</h1>
             <div className="provide__list-search">
               <div className="provide__list-search-state-time">
                 <div className="provide__list-search-provide-name">
@@ -96,7 +96,7 @@ export const ProvideNumberList = () => {
           </div>
           <div className="provide__list-add">
             <span>
-              <Link to="/providenumber">
+              <Link to={`/providenumber`}>
               <i className="fa-solid fa-square-plus"></i>
               </Link>
               

@@ -52,8 +52,8 @@ export const Example = () => {
     activeState: list[deviceId].stateactive,
     connectState: list[deviceId].stateconnect,
     service: list[deviceId].service,
-    detail: <a href={`/devicedetail/${deviceId}`}>Chi tiết</a>,
-    update: <a href={`/deviceupdate/${deviceId}`}>Cập nhật</a>,
+    detail: <Link to={`/devicedetail/${deviceId}`}>Chi tiết</Link>,
+    update: <Link to={`/deviceupdate/${deviceId}`}>Cập nhật</Link>,
   }));
 
 

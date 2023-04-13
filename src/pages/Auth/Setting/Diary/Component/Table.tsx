@@ -1,18 +1,46 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { TableCreate } from './TableCreate';
 import { useState } from 'react';
+import { CollectionReference, DocumentData, collection, getDocs } from 'firebase/firestore';
+import { db } from '../../../../../firebase/config';
 
 export const Table = () => {
     interface Column {
         Header: string;
         accessor: string;
     }
-    interface Data {
-        userName: string;
-        time: string; 
-        ip: string;
-        action: string;   
+    const [list, setList] = React.useState<Record<string, any>>({});
+      
+    interface DiaryInterface {
+      id?: string;
+      account?:string;
+      action?:string;
+      ip?:string;
+      time?:string;
     }
+    type DiaryWithId = {
+        id: string;
+    }
+    const colRef: CollectionReference<DocumentData> = collection(db, 'diarylist'); 
+    useEffect(() => {
+        const getDevices = async () => {
+        const querySnapshot = await getDocs(colRef);
+        const devices: Record<string, DiaryInterface> = {};
+        querySnapshot.forEach((doc) => {
+            devices[doc.id] = doc.data() as DiaryInterface;
+        });
+        setList(devices);
+        };
+        getDevices();
+    }, []);
+
+    const data: DiaryWithId[] = Object.keys(list).map((diaryId) => ({
+        id: diaryId,
+        userName: list[diaryId].account,
+        time: list[diaryId].time,
+        ip: list[diaryId].ip,
+        action: list[diaryId].action,
+    }));
     const columns: Column[] = [
         {
             Header: 'Tên đăng nhập',
@@ -31,64 +59,6 @@ export const Table = () => {
             accessor: 'action',
         },
     ];
-    const data = [
-        {   
-            id:'1',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },
-        {
-            id: '2',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },{
-            id: '3',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },{
-            id: '4',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },{
-            id: '5',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },{
-            id: '6',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },{
-            id: '7',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },{
-            id: '8',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },{
-            id: '9',
-            userName: 'tuyetnguyen@12',
-            time: '01/12/2021 15:12:17',
-            ip: '192.168.3.1',
-            action: 'Cập nhật thông  tin dịch vụ DV_01'
-        },
-    ]
   return (
     <TableCreate columns={columns} data={data} />
   )

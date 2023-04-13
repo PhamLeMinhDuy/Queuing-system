@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+.dashboard__state{
+ position: absolute;
+ right: 0;   
+}
+
 .dashboard__list-page-sub-header{
     position: absolute;
     transform:translateY( 160px);  
@@ -185,3 +190,4 @@
     right: 0;
     margin-right: 30px;
 }
+
