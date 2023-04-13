@@ -17,9 +17,12 @@ export const AccountSetting = () => {
     const [showPassword2, setShowPassword2] = useState(false);
     const [password, setPassword] = useState<string>('');
     const [retypepassword, setRetypepassword] = useState<string>('');
-    const [selectedItem, setSelectedItem] = useState<string>('Chọn tình trạng');
+    const [selectedItem, setSelectedItem] = useState<string>('Vai trò');
     const [selectedItemState, setSelectedItemState] = useState<string>('Chọn tình trạng');
+    
     const [error, setError] = useState(false);
+    const eyeClass = `eye-reset-account-password ${error ? 'eye-with-error' : ''}`;
+    const eyeOffClass = `eye-off-reset-account-password ${error ? 'eye-off-with-error' : ''}`;
     
     const navigate = useNavigate();
     function handleItemClick(item:any) {
@@ -138,11 +141,11 @@ export const AccountSetting = () => {
                 <span className='account__setting-infor-column-pass'>
                 <input  type={showPassword2 ? 'text' : 'password'} className={`form-control-reset-account-password ${error ? 'error' : ''}`} id="retypepassword" placeholder=" Nhập lại mật khẩu " onChange={handleRetypePasswordChange} />
                 {error && <span className="error-message">Mật khẩu không trùng khớp</span>}
-                  {showPassword2 ? (
-                    <Eye className="eye-reset-account-password eye-reset-account-password-trans" onClick={handleShowPassword2} />
-                  ) : (
-                    <EyeOff className="eye-off-reset-account-password eye-off-reset-account-password-trans" onClick={handleShowPassword2} />
-                  )}
+                    {showPassword2 ? (
+                      <Eye className={eyeClass} onClick={handleShowPassword2} />
+                    ) : (
+                      <EyeOff className={eyeOffClass} onClick={handleShowPassword2} />
+                    )}
                 </span>
                 
               </div>

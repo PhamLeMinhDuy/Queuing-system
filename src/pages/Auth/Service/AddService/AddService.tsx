@@ -32,11 +32,11 @@ export const AddService = () => {
           description: addServicedes,
           serviceid: addServiceid,
         });
-        navigate(`/servicedetail/${id}`)
+        navigate('/servicelist')
         console.log(deviceRef)
       };
     const handleCancel = () => {
-        navigate(`/servicedetail/${id}`)
+        navigate('/servicelist')
     }
   return (
     <div className='add__service-page'>

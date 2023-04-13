@@ -241,3 +241,19 @@
     top: 50%;
     transform: translate(120%,-50%);
 }
+
+.error {
+    border-color: red;
+}
+  
+.error + .error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.eye-with-error,
+.eye-off-with-error {
+    margin-right: 5px;
+    top: 15%;
+    
+}
