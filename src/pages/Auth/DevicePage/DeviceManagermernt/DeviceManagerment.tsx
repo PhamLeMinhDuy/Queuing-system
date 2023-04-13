@@ -122,7 +122,7 @@ const handleCancel = () => {
                 
               </div>
               <div className="device__managermaent-infor-column-input">
-                <p>Chọn loại thiết bị</p>
+                <p>{selectedItem}</p>
                 <i className="fa-solid fa-caret-down device__managermaent-infor-column-icon"></i>
                 <div className="device__managermaent-infor-column-list device__managermaent-infor-column-list-type">
                   <ul>

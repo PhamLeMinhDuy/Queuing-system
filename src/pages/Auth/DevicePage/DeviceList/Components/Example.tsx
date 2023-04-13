@@ -20,7 +20,7 @@ export const Example = () => {
       id?: string;
       deviceid?:string;
       ip?:string;
-      name?:string;
+      devicename?:string;
       service?:string;
       stateactive?:string;
       stateconnect?:string;
@@ -47,7 +47,7 @@ export const Example = () => {
   const data: DeviceWithId[] = Object.keys(list).map((deviceId) => ({
     id: deviceId,
     deviceId: list[deviceId].deviceid,
-    deviceName: list[deviceId].name,
+    deviceName: list[deviceId].decicename,
     deviceIP: list[deviceId].ip,
     activeState: list[deviceId].stateactive,
     connectState: list[deviceId].stateconnect,
