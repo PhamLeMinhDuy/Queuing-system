@@ -4,6 +4,7 @@ import { ArrowUp, ArrowDown, Bookmark, Star, User, Phone } from 'react-feather'
 import { Toolbar } from './DashBoardMenu/LineChart/Toolbar'
 import Areachart from './DashBoardMenu/LineChart/AreaChart'
 import './Dashboard.css'
+import { Link } from 'react-router-dom'
 import Menu from '../Menu/menu'
 
 export const DashboardPage = () => {
@@ -13,13 +14,16 @@ export const DashboardPage = () => {
         <div className="dashboard__list-page-sub-header">
               <h1>Quản lý dịch vụ</h1>
               <div className="dashboard__list-page-sub-data-card">
+              <Link style={{textDecoration:'none'}}to='/providenumberlist'>
                 <div className="dashboard__list-page-sub-data">
+                  
                   <div className="dashboard__list-page-sub-data-title">
                     <span>
                       <i className="fa-regular fa-calendar"></i>
                     </span>
                     <p>Số thứ tự đã cấp</p>
                   </div>
+                  
                   <div className="dashboard__list-page-sub-data-number">
                     <p>4.221</p>
                     <div className="dashboard__list-page-sub-data-percent">
@@ -28,6 +32,8 @@ export const DashboardPage = () => {
                     </div>
                   </div>
                 </div>
+              </Link>
+              <Link style={{textDecoration:'none'}}to='/providenumberlist'>
                 <div className="dashboard__list-page-sub-data">
                   <div className="dashboard__list-page-sub-data-title dashboard__list-page-sub-data-title-used">
                     <span>
@@ -43,6 +49,8 @@ export const DashboardPage = () => {
                     </div>
                   </div>
                 </div>
+              </Link>
+              <Link style={{textDecoration:'none'}}to='/providenumberlist'>
                 <div className="dashboard__list-page-sub-data">
                   <div className="dashboard__list-page-sub-data-title dashboard__list-page-sub-data-title-wait">
                     <span>
@@ -59,6 +67,8 @@ export const DashboardPage = () => {
                     </div>
                   </div>
                 </div>
+              </Link>
+              <Link style={{textDecoration:'none'}}to='/providenumberlist'>
                 <div className="dashboard__list-page-sub-data">
                   <div className="dashboard__list-page-sub-data-title dashboard__list-page-sub-data-title-skip">
                     <span>
@@ -75,6 +85,7 @@ export const DashboardPage = () => {
                     </div>
                   </div>
                 </div>
+              </Link>
               </div>
               <div className="dashboard__list-page-sub-header-chart">
                 <div className="dashboard__list-page-sub-header-chart-toolbar">

@@ -28,6 +28,10 @@
     margin-left: 15px;
 }
 
+.dashboard__list-page-sub-data p {
+    list-style: none;
+}
+
 
 .dashboard__list-page-sub-data-title {
     padding: 15px;

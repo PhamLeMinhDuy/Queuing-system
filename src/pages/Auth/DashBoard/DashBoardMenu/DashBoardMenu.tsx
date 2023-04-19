@@ -72,6 +72,7 @@ export const DashBoardMenu = () =>
                             </div>
                             <div className="content-dashboard__header-user-overview">
                                 <p className='content-dashboard__header-user-overview-title'>Tổng quan</p>
+                                <Link style={{textDecoration:'none'}}to='/devicelist'>
                                 <div className="content-dashboard__header-user-overview-statistical">
                                     <div className="content-dashboard__header-user-overview-statistical-multiple">
                                         <div className="content-dashboard__header-user-overview-statistical-percent">
@@ -99,6 +100,8 @@ export const DashBoardMenu = () =>
                                         </div>
                                     </div>
                                 </div>
+                                </Link>
+                                <Link style={{textDecoration:'none'}}to='/servicelist'>
                                 <div className="content-dashboard__header-user-overview-statistical">
                                     <div className="content-dashboard__header-user-overview-statistical-multiple">
                                         <div className="content-dashboard__header-user-overview-statistical-percent content-dashboard__header-user-overview-statistical-percent-service">
@@ -127,6 +130,8 @@ export const DashBoardMenu = () =>
                                         </div>
                                     </div>
                                 </div>
+                                </Link>
+                                <Link style={{textDecoration:'none'}}to='/providenumberlist'>
                                 <div className="content-dashboard__header-user-overview-statistical">
                                     <div className="content-dashboard__header-user-overview-statistical-multiple">
                                         <div className="content-dashboard__header-user-overview-statistical-percent content-dashboard__header-user-overview-statistical-percent-number">
@@ -162,6 +167,7 @@ export const DashBoardMenu = () =>
                                         </div>
                                     </div>
                                 </div>
+                                </Link>
                                 <div className="content-dashboard__header-user-overview-calendar">
                                     <CalendarComponent/>
                                 </div>
